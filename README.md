@@ -1,3 +1,22 @@
+An overview of the intended application and WHY we feel it’s valuable
+
+It is estimated that over 80 billion pounds of food are thrown away every year in the US.  On the other hand, due to the effects of the coronavirus pandemic, more than 50 million people may experience food insecurity in the US, including a potential 17 million children.  If we could somehow transfer that waste to those who are food insecure, that would result in 1,600 pounds of food per person for a year (almost 5 lbs of food per day).  This disconnect reflects a need for better food management systems, which will reduce food waste and unnecessary food shortages or starvation, stabilize food prices, optimize the food-on-hand, and increase dietary awareness.  It all starts by managing what is in your own refrigerator.  Done on a mass scale, we have the power to reduce food waste to new lows, feed more people with the same or less amount of food, and save the environment from unnecessary contamination and destruction.
+
+Pseudocode/User Story
+
+User has ability to enter, edit, view, and delete food items in virtual fridge
+Each item has name, quantity, expiration date inputs
+Items are sorted by the soonest expiration date
+Trigger function(s) based on when items expire the soonest
+Possible functions to trigger:
+	-Send alert when an item is about to expire (24 hours? User set?)
+	-Connect to API for item’s nutritional data 
+-Connect to API for recipe suggestions based on items in fridge, with notifications to user of missing items based on recipe suggestions
+
+60 Second Elevator Pitch
+Have you ever gone to your refrigerator and found food that you had forgotten about, but has already expired?  Did you wish you had an app to remind you what food is about to expire, so you don’t ever waste any food?  Would you also want some recipe suggestions and nutritional information based on the food you have, with notifications for what ingredients you might be missing to complete a recipe?  Well, we have the app for you!  Food Saver will save you food, time, and money as it makes sure no food goes to waste, recipe suggestions are plentiful, and nutritional mindfulness is increased.  Never throw away food again!  Discover new recipes!  Become more mindful of your dietary intake!
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
