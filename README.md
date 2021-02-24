@@ -57,7 +57,8 @@ Find us on GitHub:
 [Mya Todd](https://github.com/mt428376)<br />
 
 <br />
-✉️ Email us with any questions: ashadria@gmail.com<br /><br />
+✉️ Email us with any questions: <br /><br />
+
 Sungpil An
 E-mail:  ansungpil1@gmail.com
 
@@ -68,7 +69,7 @@ Mugi Chulemsuren:
 E-mail:  munkhuu1233@gmail.com
 
 Mario Reid:
-E-mail:  
+E-mail:  mario.reid83@gmail.com
 
 Mya Todd:
 E-mail:  mya.todd428376@gmail.com
@@ -83,7 +84,9 @@ Wireframe Figma:
 
 https://www.figma.com/file/CW7PkbLRIU6ef9B6yhN8fF/Food-Saver?node-id=10%3A3
 
+Googledoc with Proposal Deliverables:
 
+https://docs.google.com/document/d/1lCueR6dnYagv0xCgzwDJ4B3A8ASX8GtdPnz38sD3yxU/edit#
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
