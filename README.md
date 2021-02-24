@@ -1,3 +1,19 @@
+<h1 align="center">Food Saver 👋</h1>
+
+![badge](https://img.shields.io/badge/license-ISC-brightgreen)<br />
+## Table of Contents
+- [Description](#Description)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [License](#License)
+- [Contributing](#Contributors)
+- [Tests](#Tests)
+- [Questions](#Issues)
+- [Links](#Links)
+
+## Description
+🔍 Food Saver will save you food, time, and money as it makes sure no food goes to waste, recipe suggestions are plentiful, and nutritional mindfulness is increased.  Never throw away food again!  Discover new recipes!  Become more mindful of your dietary intake!
+
 An overview of the intended application and WHY we feel it’s valuable
 
 It is estimated that over 80 billion pounds of food are thrown away every year in the US.  On the other hand, due to the effects of the coronavirus pandemic, more than 50 million people may experience food insecurity in the US, including a potential 17 million children.  If we could somehow transfer that waste to those who are food insecure, that would result in 1,600 pounds of food per person for a year (almost 5 lbs of food per day).  This disconnect reflects a need for better food management systems, which will reduce food waste and unnecessary food shortages or starvation, stabilize food prices, optimize the food-on-hand, and increase dietary awareness.  It all starts by managing what is in your own refrigerator.  Done on a mass scale, we have the power to reduce food waste to new lows, feed more people with the same or less amount of food, and save the environment from unnecessary contamination and destruction.
@@ -5,16 +21,67 @@ It is estimated that over 80 billion pounds of food are thrown away every year i
 Pseudocode/User Story
 
 User has ability to enter, edit, view, and delete food items in virtual fridge
-Each item has name, quantity, expiration date inputs
+Each item has name, quantity, unit, and expiration date inputs
 Items are sorted by the soonest expiration date
 Trigger function(s) based on when items expire the soonest
 Possible functions to trigger:
-	-Send alert when an item is about to expire (24 hours? User set?)
-	-Connect to API for item’s nutritional data 
+-Send alert when an item is about to expire (24 hours? User set?)
+-Connect to API for item’s nutritional data 
 -Connect to API for recipe suggestions based on items in fridge, with notifications to user of missing items based on recipe suggestions
 
 60 Second Elevator Pitch
 Have you ever gone to your refrigerator and found food that you had forgotten about, but has already expired?  Did you wish you had an app to remind you what food is about to expire, so you don’t ever waste any food?  Would you also want some recipe suggestions and nutritional information based on the food you have, with notifications for what ingredients you might be missing to complete a recipe?  Well, we have the app for you!  Food Saver will save you food, time, and money as it makes sure no food goes to waste, recipe suggestions are plentiful, and nutritional mindfulness is increased.  Never throw away food again!  Discover new recipes!  Become more mindful of your dietary intake!
+
+## Installation
+💾 npm install
+## Usage
+💻 npm start
+## License
+![badge](https://img.shields.io/badge/license-ISC-brightgreen)
+<br />
+This application is covered by the ISC license. 
+
+## Contributing
+👪 Sungpil An, Adrian Ash, Mugi Chulemsuren, Mario Reid, Mya Todd
+## Tests
+✏️ No testing at this time.
+## Questions
+✋ Reach out to us on Github.<br />
+<br />
+Find us on GitHub: 
+
+[Sungpil An](https://github.com/ahnlok)<br />
+[Adrian Ash](https://github.com/ashadria1)<br />
+[Mugi Chulemsuren](https://github.com/mugich)<br />
+[Mario Reid](https://github.com/marioreid)<br />
+[Mya Todd](https://github.com/mt428376)<br />
+
+<br />
+✉️ Email us with any questions: ashadria@gmail.com<br /><br />
+Sungpil An
+E-mail:  ansungpil1@gmail.com
+
+Adrian Ash:
+E-mail:  ashadria@gmail.com
+
+Mugi Chulemsuren:
+E-mail:  munkhuu1233@gmail.com
+
+Mario Reid:
+E-mail:  
+
+Mya Todd:
+E-mail:  mya.todd428376@gmail.com
+
+## Links
+
+Project repository:
+
+https://github.com/ahnlok/food-saver
+
+Wireframe Figma: 
+
+https://www.figma.com/file/CW7PkbLRIU6ef9B6yhN8fF/Food-Saver?node-id=10%3A3
 
 
 # Getting Started with Create React App
