@@ -83,13 +83,58 @@ class Register extends React.Component {
                         {/* Email */}
                         <div className="row">
                             <div className="form-group col-12">
-                                <label html
+                                <label htmlFor="email">Email</label>
+                                <input 
+                                    value={this.state.email}
+                                    name="email"
+                                    onChange={this.handleInputChange}
+                                    type="email"
+                                    className="form-control"
+                                    id="email"
+                                    aria-describedby="emailHelp"
+                                    placeholder="Email"
+                                />
                             </div>
                         </div>
-
+                        {/* Password */}
+                        <div className="row">
+                            <div className="form-group col-6">
+                                <label htmlFor="password">Password</label>
+                                <input 
+                                    value={this.state.password}
+                                    name="password"
+                                    onChange={this.handleInputChange}
+                                    type="password"
+                                    className="form-control"
+                                    id="password"
+                                    placeholder="Password"
+                                />
+                            </div>
+                            {/* Confirm Password */}
+                            <div className="form-group col-6">
+                                <label htmlFor="password">Confirm Password</label>
+                                <input 
+                                    value={this.state.passwordConfirm}
+                                    name="passwordConfirm"
+                                    onChange={this.handleInputChange}
+                                    type="password"
+                                    className="form-control"
+                                    id="passwordConfirm"
+                                    placeholder="Password Confirm"
+                                />
+                            </div>
+                        </div>
+                        {/* Submit Button */}
+                        <div className="row col-6">
+                            <button onClick={this.handleRegister} type="submit" className="btn col-6">Register</button>
+                        </div>
                     </form>
+                    {/* Log-In Link */}
+                    <Link className="col-6" to="/login">Already Have an Account? Click Here to Log-In</Link>
                 </div>
             </div>
         )
     }
 }
+
+export default Register;
