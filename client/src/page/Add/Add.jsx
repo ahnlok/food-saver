@@ -3,7 +3,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import ItemForm from "../../components/ItemForm/ItemForm";
 
-const AddItem = () => {
+const Add = () => {
     const history = useHistory();
 
     const handleFormSubmit = (e, formObject) => {
@@ -30,5 +30,5 @@ const AddItem = () => {
     )
 }
 
-export default AddItem;
+export default Add;
 
