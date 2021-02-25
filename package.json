@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start": "cross-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
@@ -25,8 +25,10 @@
   "homepage": "https://github.com/ahnlok/food-saver#readme",
   "dependencies": {
     "concurrently": "^6.0.0",
+    "cross-env": "^7.0.3",
     "express": "^4.17.1",
     "mongoose": "^5.11.18",
+    "path": "^0.12.7",
     "watchman": "^1.0.0"
   }
 }
