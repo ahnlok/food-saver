@@ -95,7 +95,8 @@ https://docs.google.com/document/d/1lCueR6dnYagv0xCgzwDJ4B3A8ASX8GtdPnz38sD3yxU/
 ●Must have CRUD routes for at least one model
 ●Must be deployed using Heroku (with Data)
 ●Must utilize at least two libraries, packages, or technologies that we haven’t discussed
-●Must allow for or involve the authentication of users in some way●Must have a polished frontend/UI , not Bootstrap
+●Must allow for or involve the authentication of users in some way
+●Must have a polished frontend/UI , not Bootstrap
 ●Must have folder structure that meets MVC Paradigm
 ●Must meet good quality coding standards (indentation, scoping, naming)
 ●Must not expose sensitive API key information on the server

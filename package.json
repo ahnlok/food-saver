@@ -1,6 +1,10 @@
 {
+  "name": "prevent-food-waste-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
@@ -8,27 +12,26 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "name": "food-saver",
-  "version": "1.0.0",
-  "description": "An overview of the intended application and WHY we feel it’s valuable",
-  "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ahnlok/food-saver.git"
+    "url": "git+https://github.com/ahnlok/prevent-food-waste-tracker.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ahnlok/food-saver/issues"
+    "url": "https://github.com/ahnlok/prevent-food-waste-tracker/issues"
   },
-  "homepage": "https://github.com/ahnlok/food-saver#readme",
+  "homepage": "https://github.com/ahnlok/prevent-food-waste-tracker#readme",
   "dependencies": {
-    "concurrently": "^6.0.0",
-    "cross-env": "^7.0.3",
+    "bcrypt": "^5.0.0",
     "express": "^4.17.1",
-    "mongoose": "^5.11.18",
-    "path": "^0.12.7",
-    "watchman": "^1.0.0"
+    "if-env": "^1.0.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.18"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0",
+    "nodemon": "^2.0.7"
   }
 }
