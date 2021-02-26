@@ -1,0 +1,10 @@
+.nav-link {
+  padding: 20px 3px;
+  background-color: transparent;
+  opacity: 1;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+  color: #28224b;
+  font-size: 16px;
+  text-transform: none;
+}
