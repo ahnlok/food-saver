@@ -18,7 +18,7 @@ app.use(express.static("client/build"));
 
 // Connect to the Mongo DB
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/prevent-food-waste-tracker",
+    process.env.MONGODB_URI || "mongodb://localhost/food-saver",
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,

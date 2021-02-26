@@ -5,17 +5,19 @@ const jwt = require("jsonwebtoken");
 // Defining methods for the restaurantsController
 module.exports = {
   createNewUser: function (req, res) {
+    console.log("We made it!");
     const userToCreate = {
       email: req.body.email,
     };
-    bcrypt.hash(req.body.password, 8, (err, hashedPassword) => {
+    bcrypt.hash(req.body.password, bcrypt.genSaltSync(8), (err, hashedPassword) => {
       if (err) throw new Error(err);
       console.log(hashedPassword);
       userToCreate.password = hashedPassword;
       db.User.create(userToCreate)
         .then((newUser) => {
-          const token = jwt.sign({ _id: newUser._id }, process.env.SECRET);
-          res.json({ token: token });
+          /* const token = jwt.sign({ _id: newUser._id }, process.env.SECRET); */
+          /* res.json({ token: token }); */
+          res.json(newUser)
         })
         .catch((err) => {
           console.log(err);
