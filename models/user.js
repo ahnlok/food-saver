@@ -14,6 +14,10 @@ const userSchema = new Schema({
     type: String,
     trim: true,
   },
+  food: [{
+    type: Schema.Types.ObjectId, 
+    ref: 'Food'
+  }]
 });
 
 userSchema.pre("save", function (next) {

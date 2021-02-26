@@ -1,5 +1,5 @@
 {
-  "name": "prevent-food-waste-tracker",
+  "name": "food-saver",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ahnlok/prevent-food-waste-tracker.git"
+    "url": "git+https://github.com/ahnlok/food-saver.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ahnlok/prevent-food-waste-tracker/issues"
+    "url": "https://github.com/ahnlok/food-saver/issues"
   },
-  "homepage": "https://github.com/ahnlok/prevent-food-waste-tracker#readme",
+  "homepage": "https://github.com/ahnlok/food-saver#readme",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "express": "^4.17.1",

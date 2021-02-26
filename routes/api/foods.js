@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const foodsController = require("../../controllers/foodController");
+const foodsController = require("../../controllers/foodsController");
 
 // Matches with "/api/foods"
 router
@@ -9,7 +9,7 @@ router
 
 // Matches with "/api/foods/:id"
 router 
-    .router("/:id")
+    .route("/:id")
     .get(foodsController.findById)
     .put(foodsController.update)
     .delete(foodsController.remove);
