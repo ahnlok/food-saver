@@ -18,8 +18,9 @@ const items = [
 ]
 
 const Landing = () => {
-
+    // Use First List
     const [inventory, setInventory] = useState([])
+    // Current Item
     const [items, setItems] = useState([])
     
     // Function to save items to the Use first list
@@ -38,6 +39,17 @@ const Landing = () => {
             {items.map((item) => (
                 <li key={item.name}>
                     Name: {item.name} Category: {item.category} Expiration Date: {item.expiration}
+                {/* Save Button*/}
+                <Link 
+                    to=
+                />
+                {/* Edit */}
+                <Link 
+                    to={`/inventory/${id}/edit`}
+                    className="waves-effect waves-light btn"
+                />
+                {/* Delete */}
+                
                 </li>
             ))}
 
@@ -46,7 +58,7 @@ const Landing = () => {
                 <li key={inventoryList.name}>
                     Name: {inventoryList.name} Category: {inventoryList.category} Expiration Date: {inventoryList.expiration} 
                 </li>
-            <button>Save</button>
+                <button>Save</button>
             ))} 
         </div>
     );

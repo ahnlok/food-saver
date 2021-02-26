@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import ItemForm from "../../components/FoodForm/FoodForm";
+import FoodForm from "../../components/FoodForm/FoodForm";
 
 const Add = () => {
     const history = useHistory();
@@ -23,7 +23,7 @@ const Add = () => {
         <div className="container">
             <h1 className="center">Add New Item</h1>
             <div className="row">
-                <ItemForm 
+                <FoodForm 
                     handleFormSubmit={handleFormSubmit}
                     buttonText="Add New Item"
                 />

@@ -6,7 +6,7 @@ import Register from "./containers/Register/Register";
 import Main from "./containers/Main/Main";
 import Add from "./containers/Add/Add";
 import Edit from "./containers/Edit/Edit";
-// import NavBar from "./components/NavBar/NavBar";
+// import NavBar from "./components/NavBar/NavBar"
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <NavBar />
+        {/* <NavBar /> */}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={(props) => <Login {...props} setUser={setUser} />} />
