@@ -6,7 +6,7 @@ import Register from "./containers/Register/Register";
 import Main from "./containers/Main/Main";
 import Add from "./containers/Add/Add";
 import Edit from "./containers/Edit/Edit";
-import NavBar from "./components/NavBar/NavBar";
+import NavBar from "./components/Navbar/NavBar";
 
 
 function App() {
