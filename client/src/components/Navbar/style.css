@@ -18,3 +18,24 @@
   padding-left: 3px;
   color: #35b8be;
 }
+
+.nav-link.w--current {
+  margin-left: 44px;
+  padding-left: 3px;
+  color: #35b8be;
+}
+.navigation-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: #cbe9c0;
+}
