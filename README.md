@@ -102,6 +102,22 @@ https://docs.google.com/document/d/1lCueR6dnYagv0xCgzwDJ4B3A8ASX8GtdPnz38sD3yxU/
 ●Must meet good quality coding standards (indentation, scoping, naming)<br />
 ●Must not expose sensitive API key information on the server<br />
 
+### Full Stack App
+<br />
+●HTML to structure out jsx components in React<br />
+●CSS to style jsx components in React<br />
+●Use Express server for routing<br />
+●Write functions to connect Mongoose<br />
+●Build models<br />
+●Have schema for those Mongoose models<br />
+●Have route parameters<br />
+●Take in data<br />
+●Build full, restful APIs<br />
+●Full CRUD<br />
+●On front end, take React, build components, use React router for client-side routing<br />
+
+
+
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 # Getting Started with Create React App
