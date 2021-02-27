@@ -1,9 +1,8 @@
 {
-<<<<<<< HEAD
-  "dependencies": {
-    "axios": "^0.21.1",
-    "react-router-dom": "^5.2.0"
-  },
+  "name": "food-saver",
+  "version": "1.0.0",
+  "description": "Food Saver",
+  "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
@@ -12,14 +11,6 @@
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
-=======
-  "name": "food-saver",
-  "version": "1.0.0",
-  "description": "An overview of the intended application and WHY we feel it’s valuable",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -33,9 +24,15 @@
   },
   "homepage": "https://github.com/ahnlok/food-saver#readme",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "express": "^4.17.1",
-    "mongoose": "^5.11.18"
->>>>>>> 4fad958eb689c4b9de147b763318ac1bacafee51
+    "if-env": "^1.0.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.18",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0",
+    "nodemon": "^2.0.7"
   }
 }
-
