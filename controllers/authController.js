@@ -15,8 +15,8 @@ module.exports = {
       userToCreate.password = hashedPassword;
       db.User.create(userToCreate)
         .then((newUser) => {
-          /* const token = jwt.sign({ _id: newUser._id }, process.env.SECRET); */
-          /* res.json({ token: token }); */
+          /* const token = jwt.sign({ _id: newUser._id }, process.env.SECRET);
+          res.json({ token: token }); */
           res.json(newUser)
         })
         .catch((err) => {
