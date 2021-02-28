@@ -4,37 +4,25 @@ import { Link, useHistory } from "react-router-dom";
 
 
 const Main = () => {
-    const items = [
-        {
-            name: "Ketchup",
-            category: "Fridge",
-            expiration: "02-24-22",
-        },
-        {
-            name: "White Bread",
-            category: "Pantry",
-            expiration: "03-22-21",
-        },
-    ]
+    const [items, setItems] = useState([]);
+    const [name, setName] = useState("");
+    const [category, setCategory] = useState("");
+    const [expiration, expiration]
 
-    const [use, setUse] = useState([]);
-    const [useItems, setUseItems] = useState([]);
-    // const [name, setName] = useState("");
-    // const [category, setCategory] = useState("");
-    // const [expiration, setExpiration] = useState("");
+    
 
     const history = useHistory();
 
-    // useEffect(() => {
-    //     axios
-    //     .get("/api/main")
-    //     .then((response) => {
-    //         setFirsts(response.data);
-    //     })
-    //     .catch((err) => {
-    //         console.log(err);
-    //     })
-    // }, []);
+    useEffect(() => {
+        axios
+        .get("/api/main")
+        .then((response) => {
+            setFirsts(response.data);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+    }, []);
 
     // Use Function
     const handleUseClick = () => {
