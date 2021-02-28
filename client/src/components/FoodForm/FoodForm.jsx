@@ -71,10 +71,11 @@ const FoodForm = (props) => {
             id="expiration"
             type="text"
             className="validate"
+            placeholder="Expiration Date"
             value={expiration}
             onChange={(e) => setExpiration(e.target.value)}
           />
-          <label htmlFor="expiration">Expiration Date</label>
+          {/* <label htmlFor="expiration">Expiration Date</label> */}
         </div>
       </div>
       <div className="row">
