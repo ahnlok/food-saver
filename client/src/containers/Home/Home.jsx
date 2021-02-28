@@ -52,11 +52,12 @@ const Home = ({ setUser }) => {
                 type="email"
                 name="email"
                 value={email}
+                placeholder="Email"
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
               />
-              <label htmlFor="title">Email</label>
+              {/* <label htmlFor="title">Email</label> */}
             </div>
           </div>
           <div className="row">
@@ -66,12 +67,13 @@ const Home = ({ setUser }) => {
                 id="password"
                 type="password"
                 name="password"
+                placeholder="Password"
                 value={password}
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
               />
-              <label htmlFor="title">Password</label>
+              {/* <label htmlFor="title">Password</label> */}
             </div>
           </div>
           <div className="row center-align">
