@@ -4,10 +4,11 @@ import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import jwt from "jsonwebtoken";
 
+
 const Register = () => {
-    const handleSubmit=(e)=>{
-        
-    }
+    // const handleSubmit=(e)=>{
+    //     axios.post.
+    // }
 
 
 
