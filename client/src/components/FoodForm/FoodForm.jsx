@@ -57,10 +57,11 @@ const FoodForm = (props) => {
             id="category"
             type="text"
             className="validate"
+            placeholder="Category"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           />
-          <label htmlFor="category">Category</label>
+          {/* <label htmlFor="category">Category</label> */}
         </div>
       </div>
       {/* Expiration */}
