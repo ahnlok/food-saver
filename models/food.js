@@ -6,17 +6,17 @@ const foodSchema = new Schema({
   name: {
     type: String,
     trim: true,
-    required: "Enter the name of the food.",
+    required: "Required!  What is the name of the food item?",
   },
   category: {
     type: String,
     trim: true,
-    required: "Where is your item located at?"
+    required: "Required!  Is your food item in the pantry, refrigerator, or freezer?"
   },
   expiration: {
     type: String,
     trim: true,
-    required: "Please enter the expiration date of your item"
+    required: "Required!  Please enter the expiration date of your item!"
   },
 });
 
