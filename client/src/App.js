@@ -34,10 +34,21 @@
 
 // export default App;
 
-import React, { useState, Fragment } from 'react' ;
+import React, { useState, useEffect, useMemo, Fragment } from 'react' ;
 import ItemTable from './tables/ItemTable';
 import AddItemForm from './forms/AddItemForm';
-import EditItemForm from './forms/EditItemForm'
+import EditItemForm from './forms/EditItemForm';
+import SearchItem from './forms/SearchItem';
+// import { render } from 'react-dom';
+// import Button from '@material-ui/core/Button';
+// import TextField from '@material-ui/core/TextField';
+// import ToggleButton from '@material-ui/lab/ToggleButton';
+
+// import axios from 'axios'
+// import moment from 'moment'
+
+// import ReactDOM from 'react-dom'
+
 
 const App = () => {
   const itemsData = [
@@ -45,12 +56,27 @@ const App = () => {
     { id: 2, name: 'Cola', category: 'fridge', expiration: "02-23-21" },
   ]
 
+
   const initialFormState = { id: null, name: '', category: '', expiration: ''}
   // Setting State
   const [items, setItems] = useState(itemsData)
   const [editing, setEditing] = useState(false)
   const [currentItem, setCurrentItem] = useState(initialFormState)
 
+  // For Search State
+  const [filter, setFilter] = useState('');
+
+  const filteredData = useMemo(() => {
+    if (filter == "") return itemsData;
+    return itemsData.filter(
+      (item)=>
+        item.name.toLowerCase().includes(filter) ||
+        item.category.toLowerCase().includes(filter) ||
+        item.expiration.includes(filter)
+    )
+  }, [itemsData, filter]);
+ 
+  
   // Adding items to the inventory
   const addItem = (item) => {
     item.id = items.length + 1
@@ -74,9 +100,11 @@ const App = () => {
     setItems(items.map(item => (item.id === id ? updatedItem : item)))
   }
 
+  // Search
+ 
   return (
     <div className="container">
-      <h1>CRUD</h1>
+      <h1 className="center">The Food Saver</h1>
       <div className="flex-row">
         <div className="flex-large">
           {editing ? (
@@ -98,7 +126,8 @@ const App = () => {
       </div>
         <div className="flex-large">
           <h2>View Inventory</h2>
-          <ItemTable items={items} editRow={editRow} deleteItem={deleteItem}/>
+          <SearchItem onSearch={(searchTerm) => setFilter(searchTerm)} />
+          <ItemTable items={filteredData} editRow={editRow} deleteItem={deleteItem}/>
         </div>
       </div>
     </div>
