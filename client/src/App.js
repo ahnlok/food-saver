@@ -106,6 +106,7 @@ const App = () => {
   return (
     <div className="container">
       <h1 className="center">The Food Saver</h1>
+      <DateTime></DateTime>
       <div className="flex-row">
         <div className="flex-large">
           {editing ? (
@@ -121,7 +122,6 @@ const App = () => {
           ) : (
           <Fragment>
             <h2>Add Item</h2>
-            <DateTime></DateTime>
             <AddItemForm addItem={addItem} />
           </Fragment>
         )}
