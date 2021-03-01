@@ -5,6 +5,9 @@ import Welcome from  './forms/Welcome';
 import Login from './forms/Login';
 // import Register from './forms/Register'
 import SignupView from './components/views/SignupView'
+import "./components/scripts"
+import "./components/styles"
+import "./components/views"
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 

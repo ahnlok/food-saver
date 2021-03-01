@@ -3,15 +3,16 @@
 const styles = [
   {
     type: 'href',
-    body: 'C:\\css\\normalize.css',
+    body: '../../../public/css/normalize.css',
   },
   {
     type: 'href',
-    body: 'C:\\css\\webflow.css',
+    body: '../../../public/css/webflow.css',
   },
+  
   {
     type: 'href',
-    body: 'C:\\css\\foodsaver.webflow.css',
+    body: '../../../public/css/foodsaver.webflow.css',
   },
   {
     type: 'sheet',
