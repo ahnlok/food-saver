@@ -1,5 +1,5 @@
 
-import React, {useState} from 'react';
+import React from 'react';
 
 function SearchItem({ onSearch }) {
     const onSub = (e) => {
@@ -11,7 +11,7 @@ function SearchItem({ onSearch }) {
             <input
             onChange={onSub}
             className="search-input"
-            placeholder="Search"
+            placeholder="Search your item by name, category, or expiration date"
             name="search"
             />
         </form>

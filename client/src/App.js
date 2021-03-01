@@ -34,7 +34,7 @@
 
 // export default App;
 
-import React, { useState, useEffect, useMemo, Fragment } from 'react' ;
+import React, { useState, useMemo, Fragment } from 'react' ;
 import ItemTable from './tables/ItemTable';
 import AddItemForm from './forms/AddItemForm';
 import EditItemForm from './forms/EditItemForm';
@@ -67,12 +67,12 @@ const App = () => {
   const [filter, setFilter] = useState('');
 
   const filteredData = useMemo(() => {
-    if (filter == "") return itemsData;
+    if (filter === "") return itemsData;
     return itemsData.filter(
-      (item)=>
-        item.name.toLowerCase().includes(filter) ||
-        item.category.toLowerCase().includes(filter) ||
-        item.expiration.includes(filter)
+      (value)=>
+        value.name.toLowerCase().includes(filter) ||
+        value.category.toLowerCase().includes(filter) ||
+        value.expiration.includes(filter)
     )
   }, [itemsData, filter]);
  
