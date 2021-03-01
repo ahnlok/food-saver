@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react' ;
 
-import Welcome from  './forms/Welcome';
-import Login from './forms/Login';
-// import Register from './forms/Register'
+import LoginInView from './components/views/LoginInView' ;
+// import Login from './forms/Login';
+
 import SignupView from './components/views/SignupView'
 import "./components/scripts"
 import "./components/styles"
@@ -26,8 +26,8 @@ const App = () => {
             <Route exact path="/register">
               <SignupView />
             </Route>
-            <Route exact path="/login">
-              <Login />
+            <Route exact path="/LoginInView">
+              <LoginInView />
             </Route>
           </Switch>
         </Router>
