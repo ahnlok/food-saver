@@ -39,6 +39,7 @@ import ItemTable from './tables/ItemTable';
 import AddItemForm from './forms/AddItemForm';
 import EditItemForm from './forms/EditItemForm';
 import SearchItem from './forms/SearchItem';
+import DateTime from './forms/DateTime';
 // import { render } from 'react-dom';
 // import Button from '@material-ui/core/Button';
 // import TextField from '@material-ui/core/TextField';
@@ -67,14 +68,14 @@ const App = () => {
   const [filter, setFilter] = useState('');
 
   const filteredData = useMemo(() => {
-    if (filter === "") return itemsData;
-    return itemsData.filter(
+    if (filter === "") return items;
+    return items.filter(
       (value)=>
         value.name.toLowerCase().includes(filter) ||
         value.category.toLowerCase().includes(filter) ||
         value.expiration.includes(filter)
     )
-  }, [itemsData, filter]);
+  }, [items, filter]);
  
   
   // Adding items to the inventory
@@ -105,6 +106,7 @@ const App = () => {
   return (
     <div className="container">
       <h1 className="center">The Food Saver</h1>
+      <DateTime></DateTime>
       <div className="flex-row">
         <div className="flex-large">
           {editing ? (
@@ -127,7 +129,7 @@ const App = () => {
         <div className="flex-large">
           <h2>View Inventory</h2>
           <SearchItem onSearch={(searchTerm) => setFilter(searchTerm)} />
-          <ItemTable items={filteredData} editRow={editRow} deleteItem={deleteItem}/>
+          <ItemTable items={filteredData} editRow={editRow} deleteItem={deleteItem}/> 
         </div>
       </div>
     </div>
