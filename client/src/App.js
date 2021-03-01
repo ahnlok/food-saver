@@ -68,14 +68,14 @@ const App = () => {
   const [filter, setFilter] = useState('');
 
   const filteredData = useMemo(() => {
-    if (filter === "") return itemsData;
-    return itemsData.filter(
+    if (filter === "") return items;
+    return items.filter(
       (value)=>
         value.name.toLowerCase().includes(filter) ||
         value.category.toLowerCase().includes(filter) ||
         value.expiration.includes(filter)
     )
-  }, [itemsData, filter]);
+  }, [items, filter]);
  
   
   // Adding items to the inventory
@@ -129,8 +129,7 @@ const App = () => {
         <div className="flex-large">
           <h2>View Inventory</h2>
           <SearchItem onSearch={(searchTerm) => setFilter(searchTerm)} />
-          <ItemTable items={items} editRow={editRow} deleteItem={deleteItem}/> 
-          {/* items={filteredData} */}
+          <ItemTable items={filteredData} editRow={editRow} deleteItem={deleteItem}/> 
         </div>
       </div>
     </div>
