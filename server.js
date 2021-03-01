@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes")
@@ -5,7 +6,7 @@ const routes = require("./routes")
 const app = express();
 
 // PORT
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -13,8 +14,6 @@ app.use(express.json());
 
 // Serve up static assets (Heroku)
 app.use(express.static("client/build"));
-
-
 
 // Connect to the Mongo DB
 mongoose.connect(
@@ -26,10 +25,10 @@ mongoose.connect(
         useFindAndModify: false
     })
     .then(() => {
-        console.log("Successfully connected to MongoDB");
+        console.log("Successfully connected to MongoDB!!!  Huzzah!");
     })
     .catch((err) => {
-        console.log("Error connecting to MongoDB" , err);
+        console.log("Error connecting to MongoDB :-( NOOOOOOO" , err);
     });
 
     app.get("/api/config", (req, res) => {
@@ -43,7 +42,8 @@ mongoose.connect(
     app.get("*", (req,res) => {
         res.sendFile(path.join(__dirname, "client/build/index.html"));
     });
+    
     // Listener
     app.listen(PORT, () => {
-        console.log(`Server running on http://localhost:${PORT}`);
-    })
+        console.log(`Back end server running on http://localhost:${PORT}`);
+    });
