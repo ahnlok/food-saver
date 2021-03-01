@@ -3,7 +3,7 @@ const foodsController = require("../../controllers/foodsController");
 
 // Matches with "/api/foods"
 router
-    .route("/main")
+    .route("/")
     .get(foodsController.findAll)
     .post(foodsController.create);
 
