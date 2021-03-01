@@ -39,6 +39,7 @@ import ItemTable from './tables/ItemTable';
 import AddItemForm from './forms/AddItemForm';
 import EditItemForm from './forms/EditItemForm';
 import SearchItem from './forms/SearchItem';
+import DateTime from './forms/DateTime';
 // import { render } from 'react-dom';
 // import Button from '@material-ui/core/Button';
 // import TextField from '@material-ui/core/TextField';
@@ -105,6 +106,7 @@ const App = () => {
   return (
     <div className="container">
       <h1 className="center">The Food Saver</h1>
+      <DateTime></DateTime>
       <div className="flex-row">
         <div className="flex-large">
           {editing ? (
@@ -127,7 +129,8 @@ const App = () => {
         <div className="flex-large">
           <h2>View Inventory</h2>
           <SearchItem onSearch={(searchTerm) => setFilter(searchTerm)} />
-          <ItemTable items={filteredData} editRow={editRow} deleteItem={deleteItem}/>
+          <ItemTable items={items} editRow={editRow} deleteItem={deleteItem}/> 
+          {/* items={filteredData} */}
         </div>
       </div>
     </div>
