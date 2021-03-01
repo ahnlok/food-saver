@@ -41,25 +41,6 @@ mongoose.connect(
         })
     });
 
-    // // User Schema
-    // const userSchema = new mongoose.Schema({
-    //     username: String,
-    //     password: String,
-    // });
-    // const User = mongoose.model('User', userSchema);
-
-    // // Item Schema
-    // const itemsSchema = new mongoose.Schema({
-    //     userId: mongoose.Schema.ObjectId,
-    //     items: [
-    //         {
-    //             name: String,
-    //             category: String,
-    //             expiration: String,
-    //         },
-    //     ],
-    // });
-    // const Items = mongoose.model('Items', itemsSchema);
 
     // app.use(routes);
     // Register route
@@ -67,13 +48,13 @@ mongoose.connect(
         console.log(req.body);
         const { username, password } = req.body;
         const user = db.User.findOne({ username }).exec();
-        // if (user) {
-        //     res.status(500);
-        //     res.json({
-        //         message: "user already exists",
-        //     });
-        //     return;
-        // }
+        if (user) {
+            res.status(500);
+            res.json({
+                message: "user already exists",
+            });
+            return;
+        }
         db.User.create({ username, password });
         res.json({
             message: 'Successfully Registered',
