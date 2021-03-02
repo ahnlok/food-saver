@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { CredentialsContext } from '../App';
+import CredentialsContext from '../util/Test';
 
 export const handleErrors = async (response) => {
     if (!response.ok) {
@@ -14,11 +14,11 @@ export default function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const [, setCredentials] = useContext(CredentialsContext)
+    const {setCredential} = useContext(CredentialsContext)
 
     const login = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:3001/login`, {
+        fetch(`/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -29,12 +29,12 @@ export default function Login() {
             })
         })
         .then(handleErrors)
-        .then(() => {
-            setCredentials({
-                username,
-                password,
+        .then((res) => {
+            console.log(res);
+            setCredential(res.id, res.username, res.password
                 // TODO: Set the user id from the response
-            });
+            );
+            sessionStorage.setItem("id", res.id);
             history.push('/');
         })
         .catch((error) => {

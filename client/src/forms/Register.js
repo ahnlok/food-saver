@@ -1,13 +1,13 @@
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { CredentialsContext } from '../App';
+import CredentialsContext from '../util/Test';
 import { handleErrors } from './Login';
 
 export default function Register() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const [, setCredentials] = useContext(CredentialsContext);
+    const {setCredential} = useContext(CredentialsContext)
 
     const register = (e) => {
         e.preventDefault();
@@ -22,11 +22,13 @@ export default function Register() {
             }),
         })
         .then(handleErrors)
-        .then(() => {
-            setCredentials({
-                username,
-                password,
-            });
+        .then((res) => {
+            setCredential(
+                res.id,
+                res.username,
+                res.password,
+            );
+            sessionStorage.setItem("id", res.id);
             history.push('/');
         })
         .catch((error) => {

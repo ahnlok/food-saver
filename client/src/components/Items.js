@@ -4,12 +4,17 @@ import AddItemForm from '../forms/AddItemForm';
 import EditItemForm from '../forms/EditItemForm';
 import SearchItem from '../forms/SearchItem';
 import DateTime from '../forms/DateTime';
+
 // import Welcome from  '../forms/Welcome';
 
-import { CredentialsContext } from '../App';
+import CredentialsContext from '../util/Test';
 // import { v4 as uuidv4 } from 'uuid';
 
-const Main = () => {
+const Items = () => {
+
+const userId = sessionStorage.getItem("id");
+const {id, username, password} = useContext(CredentialsContext);
+console.log(id);
 
 const itemsData = [
     { id: 1, name: 'Peanut Butter', category: 'pantry', expiration: "02-23-23" },
@@ -22,7 +27,7 @@ const itemsData = [
   const [items, setItems] = useState(itemsData)
   const [editing, setEditing] = useState(false)
   const [currentItem, setCurrentItem] = useState(initialFormState)
-  const [credentials] = useContext(CredentialsContext)
+  // const [credentials] = useContext(CredentialsContext)
 
   // For Search State
   const [filter, setFilter] = useState('');
@@ -39,11 +44,11 @@ const itemsData = [
   
 //Authentication
   const postItem = (newItems) => {
-    fetch(`/items`, {
+    fetch(`/api/users/${userId}/items`, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
-            Authorization: `Basic ${credentials.username}:${credentials.password}`,
+            Authorization: `Basic ${username}:${password}`,
         },
             body: JSON.stringify(newItems),
         }).then(() => {});
@@ -51,11 +56,11 @@ const itemsData = [
 
     useEffect(() => {
       // FIXME: Pull this user id off the app.js context
-        fetch(`/api/users/603d419ef55b0c11288f95d3/items`, {
+        fetch(`/api/users/${userId}/items`, {
             method: "GET",
             headers: {
                 "Content-Type": 'application/json',
-                Authorization: `Basic ${credentials.username}:${credentials.password}`,
+                Authorization: `Basic ${username}:${password}`,
             },
         })
         .then((response) => response.json())
@@ -121,4 +126,4 @@ const itemsData = [
   )
 }
 
-export default Main;
+export default Items;
