@@ -79,10 +79,10 @@ class IndexView extends React.Component {
                     <div className="af-class-icon w-icon-nav-menu" />
                   </div>
                   <nav role="navigation" className="af-class-nav-menu w-nav-menu">
-                    <a href="index.html" aria-current="page" className="af-class-nav-link w-nav-link w--current">Home</a>
-                    <a href="login-in.html" target="_blank" className="af-class-nav-link w-button">Login in</a>
-                    <a href="#" className="af-class-nav-link w-button">Save</a>
-                    <a href="add-item.html" className="af-class-nav-link w-nav-link">Add Item</a>
+                    <a href="" aria-current="page" className="af-class-nav-link w-nav-link w--current">Home</a>
+                    <a href="" target="_blank" className="af-class-nav-link w-button">Login in</a>
+                    
+                   
                   </nav>
                 </div>
               </div>
@@ -90,9 +90,9 @@ class IndexView extends React.Component {
             <div id="Header" className="af-class-colour">
               <div className="af-class-container-flex">
                 <div className="af-class-hero-content">
-                  <h1 style={{WebkitTransform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', MozTransform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', msTransform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', transform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', opacity: 0}} className="af-class-hero-h1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</h1>
-                  <p style={{WebkitTransform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', MozTransform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', msTransform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', transform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', opacity: 0}} className="af-class-hero-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</p>
-                  <a href="/order" className="af-class-button w-button">Create a Item</a>
+                  <h1 style={{WebkitTransform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', MozTransform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', msTransform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', transform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', opacity: 0}} className="af-class-hero-h1">TEST.</h1>
+                  <p style={{WebkitTransform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', MozTransform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', msTransform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', transform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', opacity: 0}} className="af-class-hero-paragraph">Test</p>
+                  <a href="./" className="af-class-button w-button">Create a Item</a>
                 </div>
                 <div className="af-class-hero-image-wrap" />
               </div>
@@ -143,7 +143,7 @@ class IndexView extends React.Component {
                       </div>
                     </div>
                     <div className="af-class-footer-column2 w-col w-col-6">
-                      <a href="#" className="af-class-footer-link">Saved</a>
+              
                       <a href="mailto:hello@website.com?subject=Hi" className="af-class-footer-link">Contact</a>
                     </div>
                   </div>

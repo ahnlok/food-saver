@@ -120,7 +120,7 @@ class SignupView extends React.Component {
                       </div>
                     </div>
                     <div className="af-class-footer-column2 w-col w-col-6">
-                      <a href="#" className="af-class-footer-link">Saved</a>
+                     
                       <a href="mailto:hello@website.com?subject=Hi" className="af-class-footer-link">Contact</a>
                     </div>
                   </div>
