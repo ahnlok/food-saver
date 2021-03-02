@@ -79,9 +79,9 @@ class LoginInView extends React.Component {
                     <div className="af-class-icon w-icon-nav-menu" />
                   </div>
                   <nav role="navigation" className="af-class-nav-menu w-nav-menu">
-                    <a href="index.html" className="af-class-nav-link w-nav-link">Home</a>
-                    <a href="login-in.html" target="_blank" aria-current="page" className="af-class-nav-link w-button w--current">Login in</a>
-                    <a href="#" className="af-class-nav-link w-button">Save</a>
+                    <a href="Home" className="af-class-nav-link w-nav-link">Home</a>
+                    <a href="loginInView" target="_blank" aria-current="page" className="af-class-nav-link w-button w--current">Login in</a>
+                   
                     <a href="add-item.html" className="af-class-nav-link w-nav-link">Add Item</a>
                   </nav>
                 </div>

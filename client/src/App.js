@@ -1,27 +1,34 @@
 import React, { useState } from "react";
 
-import LoginInView from "./components/views/LoginInView";
-import AddItemView from "./components/views/AddItemView";
-import helpers from "./components/views/helpers";
-import IndexView from "./components/views/IndexView";
-import NotFoundView from "./components/views/NotFoundView";
-import UnauthorizedView from "./components/views/UnauthorizedView";
-import SignupView from "./components/views/SignupView";
+// import LoginInView from "./components/views/LoginInView";
+// import AddItemView from "./components/views/AddItemView";
 
-import "./components/scripts";
-import "./components/styles";
-import "./components/views";
+// import IndexView from "./components/views/IndexView";
+// import NotFoundView from "./components/views/NotFoundView";
+// import UnauthorizedView from "./components/views/UnauthorizedView";
+// import SignupView from "./components/views/SignupView";
+
+// import "./components/scripts";
+// import "./components/styles";
+// import "./components/views";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-export const CredentialsContext = React.createContext();
+
 
 const App = () => {
-  const credentialsState = useState(null);
-
+  const credentialState = useState(null);
+  const [id, setId] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const setCredential = (id, username, password) => {
+    setId(id)
+    setUsername(username)
+    setPassword(password)
+  }
   return (
     <div className="App">
-      <CredentialsContext.Provider value={credentialsState}>
+      <CredentialsContext.Provider value={{id, username, password, setCredential}}>
         <Router>
           <Switch>
             <Route exact path="/">
@@ -44,6 +51,9 @@ const App = () => {
             </Route>
             <Route exact path="/helpers">
               <helpers />
+            </Route>
+            <Route exact path="/items">
+              <Items />
             </Route>
           </Switch>
         </Router>
