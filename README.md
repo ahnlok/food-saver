@@ -1,16 +1,16 @@
 <h1 align="center">Food Saver 👋</h1>
 
-![badge](https://img.shields.io/badge/license-ISC-brightgreen)<br />
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 ## Table of Contents
 - [Description](#Description)
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [License](#License)
 - [Contributing](#Contributors)
 - [Tests](#Tests)
 - [Questions](#Issues)
 - [Links](#Links)
 - [Coding Requirements](#Requirements)
+- [License](#License)
 
 ## Description
 🔍 Food Saver will save you food, time, and money as it makes sure no food goes to waste, recipe suggestions are plentiful, and nutritional mindfulness is increased.  Never throw away food again!  Discover new recipes!  Become more mindful of your dietary intake!
@@ -37,10 +37,6 @@ Have you ever gone to your refrigerator and found food that you had forgotten ab
 💾 npm install
 ## Usage
 💻 npm start
-## License
-![badge](https://img.shields.io/badge/license-ISC-brightgreen)
-<br />
-This application is covered by the ISC license. 
 
 ## Contributing
 👪 Sungpil An, Adrian Ash, Mugi Chulemsuren, Mario Reid, Mya Todd
@@ -193,3 +189,25 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## License
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+<br />
+ 
+MIT License
+Copyright (c) 2021 Sungpil An, Mario Reid, Mugi Chulemsuren, Mya Todd, Adrian Ash
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
