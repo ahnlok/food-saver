@@ -18,7 +18,7 @@ export default function Login() {
 
     const login = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:3001/login`, {
+        fetch(`/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ export default function Login() {
                 // TODO: Set the user id from the response
             );
             sessionStorage.setItem("id", res.id);
-            // history.push('/');
+            history.push('/');
         })
         .catch((error) => {
             setError(error.message);

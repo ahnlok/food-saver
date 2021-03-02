@@ -48,19 +48,24 @@ app.get("/api/config", (req, res) => {
 app.post("/register", (req, res) => {
   console.log(req.body);
   const { username, password } = req.body;
-  const user = db.User.findOne({ username }).exec();
-  if (user) {
-    console.log(user);
-    // res.status(500);
-    res.json({
-      message: "user already exists",
-    });
-    return;
-  }
-  db.User.create({ username, password });
-  res.json({
-    message: "Successfully Registered",
+  db.User.findOne({ username }).then((user) => {
+    if (user) {
+      console.log(user);
+      // res.status(500);
+      res.json({
+        message: "user already exists",
+      });
+      return;
+    }
   });
+  db.User.create({ username, password }).then((user) => {
+    res.json({
+      message: "Successfully Registered",
+      id:user._id,
+      username:user.username,
+      password:user.password
+    });
+  })
 });
 
 // Log In Route
