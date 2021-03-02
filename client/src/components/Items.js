@@ -39,7 +39,7 @@ const itemsData = [
   
 //Authentication
   const postItem = (newItems) => {
-    fetch(`http://localhost:3001/items`, {
+    fetch(`/items`, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
@@ -50,7 +50,8 @@ const itemsData = [
     };
 
     useEffect(() => {
-        fetch(`http://localhost:3001/items`, {
+      // FIXME: Pull this user id off the app.js context
+        fetch(`/api/users/603d419ef55b0c11288f95d3/items`, {
             method: "GET",
             headers: {
                 "Content-Type": 'application/json',
