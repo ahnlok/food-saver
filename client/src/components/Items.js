@@ -38,7 +38,7 @@ const itemsData = [
   }, [items, filter]);
   
 //Authentication
-  const persist = (newItems) => {
+  const postItem = (newItems) => {
     fetch(`http://localhost:3001/items`, {
         method: "POST",
         headers: {
@@ -65,6 +65,7 @@ const itemsData = [
   const addItem = (item) => {
     item.id = items.length + 1
     setItems([...items, item])
+    postItem(item);
   }
 
   // Deleting items from the inventory

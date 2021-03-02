@@ -7,6 +7,9 @@ const cors = require("cors");
 
 const app = express();
 
+// models
+const Items = require('./models/items')
+
 // PORT
 const PORT = process.env.PORT || 3001;
 
@@ -41,25 +44,6 @@ mongoose.connect(
         })
     });
 
-    // // User Schema
-    // const userSchema = new mongoose.Schema({
-    //     username: String,
-    //     password: String,
-    // });
-    // const User = mongoose.model('User', userSchema);
-
-    // // Item Schema
-    // const itemsSchema = new mongoose.Schema({
-    //     userId: mongoose.Schema.ObjectId,
-    //     items: [
-    //         {
-    //             name: String,
-    //             category: String,
-    //             expiration: String,
-    //         },
-    //     ],
-    // });
-    // const Items = mongoose.model('Items', itemsSchema);
 
     // app.use(routes);
     // Register route
@@ -67,13 +51,14 @@ mongoose.connect(
         console.log(req.body);
         const { username, password } = req.body;
         const user = db.User.findOne({ username }).exec();
-        // if (user) {
-        //     res.status(500);
-        //     res.json({
-        //         message: "user already exists",
-        //     });
-        //     return;
-        // }
+        if (user) {
+            console.log(user)
+            // res.status(500);
+            res.json({
+                message: "user already exists",
+            });
+            return;
+        }
         db.User.create({ username, password });
         res.json({
             message: 'Successfully Registered',
@@ -112,18 +97,23 @@ mongoose.connect(
     })
     // Item Page Route
     app.post('/items', async (req,res) => {
-        const { authorization } = req.headers;
-        const [, token] = authorization.split(' ');
-        const [username, password] = token.split(':');
+        // const { authorization } = req.headers;
+        // const [, token] = authorization.split(' ');
+        // const [username, password] = token.split(':');
         const getItems = req.body;
-        const user = await db.User.findOne({ username }).exec();
-        if (!user || user.password !== password) {
-            res.status(403);
-            res.json({
-                message: 'Invalid Account, Cannot Access!',
-            });
-            return;
+        // const user = await db.User.findOne({ username }).exec();
+        // if (!user || user.password !== password) {
+        //     res.status(403);
+        //     res.json({
+        //         message: 'Invalid Account, Cannot Access!',
+        //     });
+        //     return;
+        // }
+
+        let user = {
+            _id: "603d464d2040be37b4049d9d"
         }
+
         const items = await Items.findOne({ userId: user._id }).exec();
         if (!items) {
             await Items.create({
@@ -131,25 +121,49 @@ mongoose.connect(
                 items: getItems,
             });
         } else {
-            items.items = getItems;
+            items.items.push(getItems);
             await items.save();
         }
         res.json(getItems);
     });
 
+    app.get("/seedItem", (req, res) => {
+
+        const sampleSeed = [
+            {
+                name: "Milk",
+                category: "Fridge",
+                expiration: "03-02-2021",
+            }
+        ]
+
+        Items.create({
+            userId: "603d464d2040be37b4049d9d",
+            items: sampleSeed
+        }).then(() => {
+            res.send("Seed item success!")
+        })
+    } )
+
     // Items get Route
     app.get('/items', async (req, res) => {
-        const { authorization } = req.headers;
-        const [, token] = authorization.split(' ');
-        const [username, password] = token.split(':');
-        const user = await db.User.findOne({ username }).exec();
-        if (!user || user.password !==password) {
-            res.status(403);
-            res.json({
-                message: "Invalid Access",
-            });
-            return;
+        // const { authorization } = req.headers;
+        // const [, token] = authorization.split(' ');
+        // const [username, password] = token.split(':');
+        // const user = await db.User.findOne({ username }).exec();
+        // if (!user || user.password !==password) {
+        //     res.status(403);
+        //     res.json({
+        //         message: "Invalid Access",
+        //     });
+        //     return;
+        // }
+
+        
+        let user = {
+            _id: "603d464d2040be37b4049d9d"
         }
+
         const { items } = await Items.findOne({ userId: user._id }).exec();
         res.json(items);
     });
