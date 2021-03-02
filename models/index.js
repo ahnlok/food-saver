@@ -1,4 +1,4 @@
 module.exports = {
-    Food: require("./items"),
-    User: require("./user")
+    Item: require("./item"),
+    User: require("./user"),
 };

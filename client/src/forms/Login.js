@@ -33,6 +33,7 @@ export default function Login() {
             setCredentials({
                 username,
                 password,
+                // TODO: Set the user id from the response
             });
             history.push('/');
         })
