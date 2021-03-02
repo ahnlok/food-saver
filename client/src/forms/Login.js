@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { CredentialsContext } from '../App';
+import CredentialsContext from '../util/Test';
 
 export const handleErrors = async (response) => {
     if (!response.ok) {
@@ -14,7 +14,7 @@ export default function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const [, setCredentials] = useContext(CredentialsContext)
+    const {setCredential} = useContext(CredentialsContext)
 
     const login = (e) => {
         e.preventDefault();
@@ -29,13 +29,13 @@ export default function Login() {
             })
         })
         .then(handleErrors)
-        .then(() => {
-            setCredentials({
-                username,
-                password,
+        .then((res) => {
+            console.log(res);
+            setCredential(res.id, res.username, res.password
                 // TODO: Set the user id from the response
-            });
-            history.push('/');
+            );
+            sessionStorage.setItem("id", res.id);
+            // history.push('/');
         })
         .catch((error) => {
             setError(error.message);

@@ -78,6 +78,9 @@ app.post("/login", (req, res) => {
     }
     res.json({
       message: "Successfully Logged into the Food Saver",
+      id:user._id,
+      username:user.username,
+      password:user.password
     });
   });
 });

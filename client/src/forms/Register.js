@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { CredentialsContext } from '../App';
+import CredentialsContext from '../util/Test';
 import { handleErrors } from './Login';
 
 export default function Register() {
