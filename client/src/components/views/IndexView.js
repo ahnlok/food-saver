@@ -1,5 +1,7 @@
-/* eslint-disable */
-
+// /* eslint-disable */
+// import   "../styles/css/normalize.css"
+// import   "../styles/css/foodsaver.webflow.css"
+// import   "../styles/css/webflow.css"
 import React from 'react'
 import { createScope, map, transformProxies } from './helpers'
 
@@ -79,8 +81,10 @@ class IndexView extends React.Component {
                     <div className="af-class-icon w-icon-nav-menu" />
                   </div>
                   <nav role="navigation" className="af-class-nav-menu w-nav-menu">
-                    <a href="" aria-current="page" className="af-class-nav-link w-nav-link w--current">Home</a>
-                    <a href="" target="_blank" className="af-class-nav-link w-button">Login in</a>
+                    <a href="/IndexView" aria-current="page" className="af-class-nav-link w-nav-link w--current">Home</a>
+                    <a href="/register" target="_blank" className="af-class-nav-link w-button">Login in</a>
+                    
+                    <a href="/register" target="_blank" className="af-class-nav-link w-button">Login in</a>
                     
                    
                   </nav>

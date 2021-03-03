@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import CredentialsContext from '../util/Test';
 import { handleErrors } from './Login';
+import "../../public/css/normalize.ccs"
 
 export default function Register() {
     const [username, setUsername] = useState('');
@@ -39,11 +40,12 @@ export default function Register() {
     const history = useHistory();
 
     return (
-        <div>
+        <div className="af-view">
             <h1>Register</h1>
             {error && <span style={{ color: 'red' }}>{error}</span>}
-            <form onSubmit={register}>
+            <form onSubmit={register} className="af-view" >
                 <input
+                className="af-view"
                     onChange={(e) => setUsername(e.target.value)}
                     placeholder='username'
                 />

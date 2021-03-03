@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 
-// import LoginInView from "./components/views/LoginInView";
-// import AddItemView from "./components/views/AddItemView";
+import LoginInView from "./components/views/LoginInView";
+import AddItemView from "./components/views/AddItemView";
 
-// import IndexView from "./components/views/IndexView";
-// import NotFoundView from "./components/views/NotFoundView";
-// import UnauthorizedView from "./components/views/UnauthorizedView";
-// import SignupView from "./components/views/SignupView";
+import IndexView from "./components/views/IndexView";
+import NotFoundView from "./components/views/NotFoundView";
+import UnauthorizedView from "./components/views/UnauthorizedView";
+import SignupView from "./components/views/SignupView";
+import Items from "./components/Items"
+import CredentialsContext from "./util/Test"
 
-// import "./components/scripts";
-// import "./components/styles";
-// import "./components/views";
+import Signup2 from './components/views/Signup2'
+import "./components/scripts";
+import "./components/styles";
+import "./components/views";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -35,7 +38,7 @@ const App = () => {
               <IndexView />
             </Route>
             <Route exact path="/register">
-              <SignupView />
+              <Signup2 />
             </Route>
             <Route exact path="/LoginInView">
               <LoginInView />
