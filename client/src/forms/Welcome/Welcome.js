@@ -14,6 +14,7 @@ export default function Welcome () {
 
     return (
         <div className="background">
+            <div class="card-panel teal lighten-5">This is a card panel with a teal lighten-2 class
             {id && <button onClick={logout}>Logout</button>}
             <h1 className="header center">Welcome {id && username} to The Food Saver</h1>
             <DateTime className="date"></DateTime>
@@ -35,8 +36,11 @@ export default function Welcome () {
                 {!id && <Link to="/login"
                 className="login_link">Login</Link>}
                 </button>
+                
             </div>
             {id && <Items />}
+            
+        </div>
         </div>
     )
 }
