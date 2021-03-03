@@ -33,7 +33,8 @@ const itemsData = [
   const [filter, setFilter] = useState('');
 
   const filteredData = useMemo(() => {
-    if (filter === "") return items;
+    if (!filter) return items;
+    console.log("Didn't return items.");
     return items.filter(
       (value)=>
         value.name.toLowerCase().includes(filter) ||
@@ -52,6 +53,20 @@ const itemsData = [
 //   })
 // })
 //Authentication
+
+const getItems = () => {
+  fetch(`/api/users/${userId}/items`, {
+    method: "GET",
+    headers: {
+        "Content-Type": 'application/json',
+        Authorization: `Basic ${username}:${password}`,
+    },
+})
+.then((response) => response.json())
+.then((items) => setItems(items));
+}
+
+
   const postItem = (newItems) => {
     fetch(`/api/users/${userId}/items`, {
         method: "POST",
@@ -60,44 +75,56 @@ const itemsData = [
             Authorization: `Basic ${username}:${password}`,
         },
             body: JSON.stringify(newItems),
-        }).then(() => {});
+        }).then(() => {getItems()});
     };
 
     useEffect(() => {
       // FIXME: Pull this user id off the app.js context
-        fetch(`/api/users/${userId}/items`, {
-            method: "GET",
-            headers: {
-                "Content-Type": 'application/json',
-                Authorization: `Basic ${username}:${password}`,
-            },
-        })
-        .then((response) => response.json())
-        .then((items) => setItems(items));
+      getItems();
       }, []);
    
   // Adding items to the inventory
   const addItem = (item) => {
-    item.id = items.length + 1
-    setItems([...items, item])
+    /* item.id = items.length + 1
+    setItems([...items, item]) */
     postItem(item);
   }
 
   // Deleting items from the inventory
   const deleteItem = (id) => {
     setEditing(false)
-    setItems(items.filter(item => item.id !== id))
+    /* setItems(items.filter(item => item.id !== id)) */
+    fetch(`/api/foods/${id}`, {
+      method: "DELETE",
+      headers: {
+          "Content-Type": 'application/json',
+          Authorization: `Basic ${username}:${password}`,
+      },
+  })
+  .then((response) => response.json())
+  .then((items) => getItems());
   }
 
   // Editing from the inventory
   const editRow = (item) => {
     setEditing(true)
 
-    setCurrentItem({ id: item.id, name: item.name, category: item.category, expiration: item.expiration })
+    setCurrentItem({ id: item._id, name: item.name, category: item.category, expiration: item.expiration })
   }
   const updateItem = (id, updatedItem) => {
     setEditing(false)
-    setItems(items.map(item => (item.id === id ? updatedItem : item)))
+    console.log(id);
+    fetch(`api/foods/${id}`, {
+      method: "PUT",
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Basic ${username}:${password}`,
+        },
+          body: JSON.stringify(updatedItem),
+      }).then((response) => response.json())
+      .then((items) => getItems());
+    
+    /* setItems(items.map(item => (item.id === id ? updatedItem : item))) */
   }
 
   // Search
