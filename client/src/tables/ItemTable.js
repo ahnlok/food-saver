@@ -13,7 +13,7 @@ const ItemTable = (props) => (
     <tbody>
       {props.items.length > 0 ? (
         props.items.map((item) => (
-          <tr key={item.id}>
+          <tr key={item._id}>
             <td>{item.name}</td>
             <td>{item.category}</td>
             <td>{item.expiration}</td>
@@ -26,7 +26,7 @@ const ItemTable = (props) => (
               className="button muted-button">Edit</button>
               {/* DELETE Button */}
               <button 
-                onClick={() => props.deleteItem(item.id)}
+                onClick={() => props.deleteItem(item._id)}
                 className="button muted-button">
                 Delete</button>
             </td>

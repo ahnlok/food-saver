@@ -52,6 +52,20 @@ const itemsData = [
 //   })
 // })
 //Authentication
+
+const getItems = () => {
+  fetch(`/api/users/${userId}/items`, {
+    method: "GET",
+    headers: {
+        "Content-Type": 'application/json',
+        Authorization: `Basic ${username}:${password}`,
+    },
+})
+.then((response) => response.json())
+.then((items) => setItems(items));
+}
+
+
   const postItem = (newItems) => {
     fetch(`/api/users/${userId}/items`, {
         method: "POST",
@@ -65,15 +79,7 @@ const itemsData = [
 
     useEffect(() => {
       // FIXME: Pull this user id off the app.js context
-        fetch(`/api/users/${userId}/items`, {
-            method: "GET",
-            headers: {
-                "Content-Type": 'application/json',
-                Authorization: `Basic ${username}:${password}`,
-            },
-        })
-        .then((response) => response.json())
-        .then((items) => setItems(items));
+      getItems();
       }, []);
    
   // Adding items to the inventory
@@ -87,6 +93,15 @@ const itemsData = [
   const deleteItem = (id) => {
     setEditing(false)
     setItems(items.filter(item => item.id !== id))
+    fetch(`/api/foods/${id}`, {
+      method: "DELETE",
+      headers: {
+          "Content-Type": 'application/json',
+          Authorization: `Basic ${username}:${password}`,
+      },
+  })
+  .then((response) => response.json())
+  .then((items) => getItems());
   }
 
   // Editing from the inventory
