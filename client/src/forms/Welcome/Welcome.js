@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Items from '../../components/Items';
-import style from './style.css'
 import DateTime from '../DateTime'
+import './style.css'
 
 import CredentialsContext from '../../util/Test';
 

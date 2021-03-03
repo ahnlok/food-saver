@@ -9,7 +9,7 @@
     /* background: lightskyblue; */
    
 }
-.register_header {
+.login_header {
    font-size: 60px;
    font-weight: bold; 
    color: black;
@@ -31,7 +31,7 @@ h4 {
 }
 
 @media screen and (max-width: 900px) {
-    .register_header {
+    .login_header {
         font-size: 40px;
         font-weight: bold;
         color: black;
