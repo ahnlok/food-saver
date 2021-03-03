@@ -41,10 +41,27 @@ export default function Register() {
     const history = useHistory();
 
     return (
+
         <div className="card">
             <div className="row">
                 <h1 className="register_header center">Register</h1>
                 <hr />
+
+        <div className="af-view">
+            <h1>Register</h1>
+            {error && <span style={{ color: 'red' }}>{error}</span>}
+            <form onSubmit={register} className="af-view" >
+
+        <div className="field">
+            <h1 className="register_header center">Register</h1>
+            {error && <span style={{ color: 'red' }}>{error}</span>}
+            <form onSubmit={register} className="center">
+
+                <input
+                className="af-view"
+                    onChange={(e) => setUsername(e.target.value)}
+                    placeholder='username'
+                ></input>
                 <br />
                 {error && <span style={{ color: 'red' }}>{error}</span>}
                 <form onSubmit={register} className="col s12">
@@ -56,7 +73,7 @@ export default function Register() {
                             />
                         </div>
                     </div>
-                    <br />
+                 <br />
                     {/* Add hash for password */}
                     <div className="row">
                         <div className="input-field col s12 center">
