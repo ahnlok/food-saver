@@ -46,6 +46,9 @@ const App = () => {
             <Route exact path="/AddItem">
               <AddItemView />
             </Route>
+            <Route exact path="/Sign up">
+              <SignupView />
+            </Route>
             <Route exact path="/NotFound">
               <NotFoundView />
             </Route>
