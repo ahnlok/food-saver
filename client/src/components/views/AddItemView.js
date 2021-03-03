@@ -79,22 +79,22 @@ class AddItemView extends React.Component {
                     <div className="af-class-icon w-icon-nav-menu" />
                   </div>
                   <nav role="navigation" className="af-class-nav-menu w-nav-menu">
-                    <a href="index.html" className="af-class-nav-link w-nav-link">Home</a>
-                    <a href="login-in.html" target="_blank" className="af-class-nav-link w-button">Login in</a>
-                    <a href="#" className="af-class-nav-link w-button">Save</a>
-                    <a href="add-item.html" aria-current="page" className="af-class-nav-link w-nav-link w--current">Add Item</a>
+                    <a href="IndexView" className="af-class-nav-link w-nav-link">Home</a>
+                    <a href="LoginInView" target="_blank" className="af-class-nav-link w-button">Login in</a>
+                    
+                    <a href="AddItemView" aria-current="page" className="af-class-nav-link w-nav-link w--current">Add Item</a>
                   </nav>
                 </div>
               </div>
             </div>
             <div className="w-layout-grid af-class-grid-5">
               <div className="w-form">
-                <form id="email-form" name="email-form" data-name="Email Form"><label htmlFor="name" className="af-class-field-label-6"> Item Name </label><input type="text" className="w-input" maxLength={256} name="name" data-name="Name" placeholder id="name" /><label htmlFor="email" className="af-class-field-label-7">Category</label><input type="email" className="w-input" maxLength={256} name="email" data-name="Email" placeholder id="email" required /><label htmlFor="email-2" className="af-class-field-label-7">Expiration Date</label><input type="text" className="w-input" maxLength={256} name="field" data-name="Field" id="field" required /><input type="submit" defaultValue="Add Item " data-wait="Please wait..." className="w-button" /></form>
+                <form id="Add-Item-form" name="Add-Item-form" data-name="Add-Item-form"><label htmlFor="name" className="af-class-field-label-6"> Item Name </label><input type="text" className="w-input" maxLength={256} name="name" data-name="Name" placeholder id="name" /><label htmlFor="email" className="af-class-field-label-7">Category</label><input type="email" className="w-input" maxLength={256} name="email" data-name="Email" placeholder id="email" required /><label htmlFor="email-2" className="af-class-field-label-7">Expiration Date</label><input type="text" className="w-input" maxLength={256} name="field" data-name="Field" id="field" required /><input type="submit" defaultValue="Add Item " data-wait="Please wait..." className="w-button" /></form>
                 <div className="w-form-done">
-                  <div>Thank you! Your submission has been received!</div>
+                  <div>Thank you! Your item has been added</div>
                 </div>
                 <div className="w-form-fail">
-                  <div>Oops! Something went wrong while submitting the form.</div>
+                  <div>Oops! Something went wrong while adding your item.</div>
                 </div>
               </div>
               <div className="af-class-footer">
@@ -105,13 +105,13 @@ class AddItemView extends React.Component {
                       <div className="w-col w-col-6">
                         <div className="af-class-div-block-2" />
                         <div className="af-class-footer-column">
-                          <a href="index.html" className="af-class-footer-link">Home</a>
-                          <a href="#" className="af-class-footer-link">Login in</a>
+                          <a href="Indexview" className="af-class-footer-link">Home</a>
+                          <a href="LoginInView" className="af-class-footer-link">Login in</a>
                         </div>
                       </div>
                       <div className="af-class-footer-column2 w-col w-col-6">
-                        <a href="#" className="af-class-footer-link">Saved</a>
-                        <a href="mailto:hello@website.com?subject=Hi" className="af-class-footer-link">Contact</a>
+                      
+                        <a href="Mya.todd428376@gmail.comsubject=Contact" className="af-class-footer-link">Contact</a>
                       </div>
                     </div>
                   </div>
