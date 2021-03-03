@@ -4,11 +4,11 @@ import AddItemForm from '../forms/AddItemForm';
 import EditItemForm from '../forms/EditItemForm';
 import SearchItem from '../forms/SearchItem';
 import DateTime from '../forms/DateTime';
+// import alanBtn from '@alan-ai/alan-sdk-web';
 
 // import Welcome from  '../forms/Welcome';
 
 import CredentialsContext from '../util/Test';
-// import { v4 as uuidv4 } from 'uuid';
 
 const Items = () => {
 
@@ -42,6 +42,15 @@ const itemsData = [
     )
   }, [items, filter]);
   
+// Alan Ai
+// useEffect(() => {
+//   alanBtn({
+//     key: 'c74e4ca6f18d3f621f16ca738b3fb5a62e956eca572e1d8b807a3e2338fdd0dc/stage',
+//     onCommand: (commandData) =>  {
+
+//     }
+//   })
+// })
 //Authentication
   const postItem = (newItems) => {
     fetch(`/api/users/${userId}/items`, {
