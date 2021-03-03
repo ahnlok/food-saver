@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
 
 const App = () => {
-  const credentialsState = useState(null);
+  /* const credentialsState = useState(null); */
   const [id, setId] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');

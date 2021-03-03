@@ -13,7 +13,8 @@ const ItemTable = (props) => (
     <tbody>
       {props.items.length > 0 ? (
         props.items.map((item) => (
-          <tr key={item.id}>
+          <tr key={item._id}>
+            {console.log(item._id)}
             <td>{item.name}</td>
             <td>{item.category}</td>
             <td>{item.expiration}</td>

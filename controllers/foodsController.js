@@ -13,6 +13,19 @@ module.exports = {
             .catch((err) => res.status(422).json(err));
     },
     create: function (req, res) {
+/*         db.User.findByIdAndUpdate(
+            req.params.id,
+            { $push: { foodItems: req.body } },
+            // "runValidators" will ensure new exercises meet our schema requirements
+            { new: true, runValidators: true }
+          )
+            .then((dbModel) => {
+              res.json(dbModel);
+            })
+            .catch((err) => {
+              res.json(err);
+            });     */
+    
         db.Food.create(req.body)
             .then((dbModel) => res.json(dbModel))
             .catch((err) => res.status(422).json(err));

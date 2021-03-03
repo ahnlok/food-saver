@@ -1,3 +1,4 @@
+const path = require("path");
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
@@ -142,6 +143,7 @@ app.post("/api/users/:userId/items", async (req, res) => {
 // Items get Route
 app.get("/api/users/:userId/items", async (req, res) => {
   db.User.findById(req.params.userId)
+  .populate("items")
     .then((foundUser) => {
       if (foundUser) {
         console.log(foundUser);
