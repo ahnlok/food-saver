@@ -127,7 +127,7 @@ app.post("/api/users/:userId/items", async (req, res) => {
         req.params.userId,
         { $push: { items: newItem._id } },
         { new: true }
-      )
+        )
         .populate("items")
         .then((updatedUser) => {
           console.log(updatedUser);
@@ -142,10 +142,11 @@ app.post("/api/users/:userId/items", async (req, res) => {
 // Items get Route
 app.get("/api/users/:userId/items", async (req, res) => {
   db.User.findById(req.params.userId)
-    .then((foundUser) => {
-      if (foundUser) {
-        console.log(foundUser);
-        res.json(foundUser.items);
+    .populate("items")
+    .then((foundUser2) => {
+      if (foundUser2) {
+        console.log(foundUser2.items);
+        res.json(foundUser2.items);
       }
     })
     .catch((err) => {
