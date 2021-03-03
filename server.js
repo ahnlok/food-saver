@@ -44,7 +44,7 @@ app.get("/api/config", (req, res) => {
   });
 });
 
-// app.use(routes);
+
 // Register route
 app.post("/register", (req, res) => {
   console.log(req.body);
@@ -102,22 +102,6 @@ app.get("/users", (req, res) => {
     });
 });
 
-// app.get("/seedItem", (req, res) => {
-//   const sampleSeed = [
-//     {
-//       name: "Milk",
-//       category: "Fridge",
-//       expiration: "03-02-2021",
-//     },
-//   ];
-
-//   Items.create({
-//     userId: "603d464d2040be37b4049d9d",
-//     items: sampleSeed,
-//   }).then(() => {
-//     res.send("Seed item success!");
-//   });
-// });
 
 // Item Page Route
 app.post("/api/users/:userId/items", async (req, res) => {
@@ -157,6 +141,12 @@ app.get("/api/users/:userId/items", async (req, res) => {
     });
 });
 
+app.put("/api/foods/:id", (req, res) => {
+  console.log(req.body);
+  db.Item.findByIdAndUpdate({ _id: req.params.id }, req.body)
+  .then((dbModel) => res.json(dbModel))
+  .catch((err) => res.status(422).json(err));
+})
 
 // DELETE food item
 app.delete("/api/foods/:id", (req, res) => {

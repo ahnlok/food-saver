@@ -33,7 +33,7 @@ const itemsData = [
   const [filter, setFilter] = useState('');
 
   const filteredData = useMemo(() => {
-    if (filter === "") return items;
+    if (!filter) return items;
     return items.filter(
       (value)=>
         value.name.toLowerCase().includes(filter) ||
@@ -42,16 +42,6 @@ const itemsData = [
     )
   }, [items, filter]);
   
-// Alan Ai
-// useEffect(() => {
-//   alanBtn({
-//     key: 'c74e4ca6f18d3f621f16ca738b3fb5a62e956eca572e1d8b807a3e2338fdd0dc/stage',
-//     onCommand: (commandData) =>  {
-
-//     }
-//   })
-// })
-//Authentication
 
 const getItems = () => {
   fetch(`/api/users/${userId}/items`, {
@@ -74,25 +64,24 @@ const getItems = () => {
             Authorization: `Basic ${username}:${password}`,
         },
             body: JSON.stringify(newItems),
-        }).then(() => {});
+        }).then(() => {getItems()});
     };
 
     useEffect(() => {
-      // FIXME: Pull this user id off the app.js context
       getItems();
       }, []);
    
   // Adding items to the inventory
   const addItem = (item) => {
-    item.id = items.length + 1
-    setItems([...items, item])
+    // item.id = items.length + 1
+    // setItems([...items, item])
     postItem(item);
   }
 
   // Deleting items from the inventory
   const deleteItem = (id) => {
     setEditing(false)
-    setItems(items.filter(item => item.id !== id))
+    // setItems(items.filter(item => item.id !== id))
     fetch(`/api/foods/${id}`, {
       method: "DELETE",
       headers: {
@@ -108,27 +97,24 @@ const getItems = () => {
   const editRow = (item) => {
     setEditing(true)
 
-    setCurrentItem({ id: item.id, name: item.name, category: item.category, expiration: item.expiration })
+    setCurrentItem({ id: item._id, name: item.name, category: item.category, expiration: item.expiration })
   }
   const updateItem = (id, updatedItem) => {
-    fetch(`api/users/${userId}/items`, {
+    setEditing(false)
+    fetch(`api/foods/${id}`, {
     method: "PUT",
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Basic ${username}:${password}`,
       },
-        body: JSON.stringify(id, updatedItem),
-    }).then(() => {
+        body: JSON.stringify(updatedItem),
+    }).then((response) => response.json())
+    .then((items) => getItems());
 
-      setEditing(false)
-      setItems(items.map(item => (item.id === id ? updatedItem : item)))
-    })
+      // setItems(items.map(item => (item.id === id ? updatedItem : item)))
   }
 
 
-
-  // Search
- 
   return (
     <div className="container">
       <h1 className="center">The Food Saver</h1>
