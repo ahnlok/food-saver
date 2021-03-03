@@ -34,10 +34,7 @@ const itemsData = [
 
   const filteredData = useMemo(() => {
     if (!filter) return items;
-<<<<<<< HEAD
-=======
     console.log("Didn't return items.");
->>>>>>> 5f4edd04f019cc51ae2925006ef6caa85fb61453
     return items.filter(
       (value)=>
         value.name.toLowerCase().includes(filter) ||
@@ -77,24 +74,15 @@ const getItems = () => {
    
   // Adding items to the inventory
   const addItem = (item) => {
-<<<<<<< HEAD
-    // item.id = items.length + 1
-    // setItems([...items, item])
-=======
     /* item.id = items.length + 1
     setItems([...items, item]) */
->>>>>>> 5f4edd04f019cc51ae2925006ef6caa85fb61453
     postItem(item);
   }
 
   // Deleting items from the inventory
   const deleteItem = (id) => {
     setEditing(false)
-<<<<<<< HEAD
-    // setItems(items.filter(item => item.id !== id))
-=======
     /* setItems(items.filter(item => item.id !== id)) */
->>>>>>> 5f4edd04f019cc51ae2925006ef6caa85fb61453
     fetch(`/api/foods/${id}`, {
       method: "DELETE",
       headers: {
@@ -114,19 +102,6 @@ const getItems = () => {
   }
   const updateItem = (id, updatedItem) => {
     setEditing(false)
-<<<<<<< HEAD
-    fetch(`api/foods/${id}`, {
-    method: "PUT",
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Basic ${username}:${password}`,
-      },
-        body: JSON.stringify(updatedItem),
-    }).then((response) => response.json())
-    .then((items) => getItems());
-
-      // setItems(items.map(item => (item.id === id ? updatedItem : item)))
-=======
     console.log(id);
     fetch(`api/foods/${id}`, {
       method: "PUT",
@@ -139,7 +114,6 @@ const getItems = () => {
       .then((items) => getItems());
     
     /* setItems(items.map(item => (item.id === id ? updatedItem : item))) */
->>>>>>> 5f4edd04f019cc51ae2925006ef6caa85fb61453
   }
 
 
