@@ -47,5 +47,8 @@
   "main": "index.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.2"
+  }
 }
