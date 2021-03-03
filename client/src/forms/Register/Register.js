@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import CredentialsContext from '../../util/Test';
-import { handleErrors } from '../Login';
+
 import './style.css';
 
 export default function Register() {
@@ -45,6 +45,7 @@ export default function Register() {
             {error && <span style={{ color: 'red' }}>{error}</span>}
             <form onSubmit={register} className="center">
                 <input
+                className="af-view"
                     onChange={(e) => setUsername(e.target.value)}
                     placeholder='username'
                 />
