@@ -1,3 +1,4 @@
+const path = require("path");
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
@@ -169,9 +170,27 @@ app.get("/api/users/:userId/items", async (req, res) => {
   // res.json(items);
 });
 
+// DELETE food item
+app.delete("/api/foods/:id", (req, res) => {
+  db.Item.findById({ _id: req.params.id })
+            .then((dbModel) => dbModel.remove())
+            .then((dbModel) => res.json(dbModel))
+            .catch((err) => res.status(422).json(err));
+}),
+
+//EDIT food item
+app.put("/api/foods/:id", (req, res) => {
+  console.log(req.body);
+  db.Item.findByIdAndUpdate({ _id: req.params.id }, req.body)
+            .then((dbModel) => res.json(dbModel))
+            .catch((err) => res.status(422).json(err));
+}),
+
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build/index.html"));
 });
+
 
 // Listener
 app.listen(PORT, () => {
