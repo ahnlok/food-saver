@@ -16,6 +16,7 @@ import "./components/styles";
 import "./components/views";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import AddItemForm from "./forms/AddItemForm";
 
 
 
@@ -38,26 +39,18 @@ const App = () => {
               <IndexView />
             </Route>
             <Route exact path="/register">
-              <IndexView />
+              <Register js/>
             </Route>
             <Route exact path="/Login">
-              <LoginInView />
+              <Login js />
             </Route>
             <Route exact path="/AddItem">
-              <AddItemView />
+              <AddItemForm />
             </Route>
             <Route exact path="/Sign up">
               <SignupView />
             </Route>
-            <Route exact path="/NotFound">
-              <NotFoundView />
-            </Route>
-            <Route exact path="/Unauthorized">
-              <UnauthorizedView />
-            </Route>
-            <Route exact path="/helpers">
-              <helpers />
-            </Route>
+            
             <Route exact path="/items">
               <Items />
             </Route>
