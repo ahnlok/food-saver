@@ -44,15 +44,13 @@ export default function Register() {
 
         <div className="card">
             <div className="row">
-                <h1 className="register_header center">Register</h1>
-                <hr />
-
-        <div className="af-view">
-            <h1>Register</h1>
-            {error && <span style={{ color: 'red' }}>{error}</span>}
-            <form onSubmit={register} className="af-view" >
-
-        <div className="field">
+                <h1>Register</h1>
+                {error && <span style={{ color: 'red' }}>{error}</span>}
+                <form onSubmit={register}>
+            <hr />
+            </div>
+            <div className="row">
+            <div className="field">
             <h1 className="register_header center">Register</h1>
             {error && <span style={{ color: 'red' }}>{error}</span>}
             <form onSubmit={register} className="center">
@@ -61,6 +59,7 @@ export default function Register() {
                     onChange={(e) => setUsername(e.target.value)}
                     placeholder='username'
                 ></input>
+            </div>
                 <br />
                 {error && <span style={{ color: 'red' }}>{error}</span>}
                 <form onSubmit={register} className="col s12">
@@ -88,6 +87,7 @@ export default function Register() {
                     <br />
                     <h4><Link to="/login">Already Have A Account? </Link></h4>
                 </form>
+                </div>
             </div>
         </div>
     )
