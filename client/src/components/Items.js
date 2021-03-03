@@ -64,7 +64,7 @@ const itemsData = [
     };
 
     useEffect(() => {
-      // FIXME: Pull this user id off the app.js context
+      
         fetch(`/api/users/${userId}/items`, {
             method: "GET",
             headers: {
@@ -85,9 +85,19 @@ const itemsData = [
 
   // Deleting items from the inventory
   const deleteItem = (id) => {
-    setEditing(false)
-    setItems(items.filter(item => item.id !== id))
-  }
+    fetch(`/api/users/${userId}/items`, {
+      method: "DELETE",
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Basic ${username}:${password}`, 
+        },
+        body: JSON.stringify(id), })
+        .then(() => {
+          setEditing(false)
+          setItems(items.filter(item => item.id !== id))
+        });
+      }
+ 
 
   // Editing from the inventory
   const editRow = (item) => {
@@ -96,9 +106,21 @@ const itemsData = [
     setCurrentItem({ id: item.id, name: item.name, category: item.category, expiration: item.expiration })
   }
   const updateItem = (id, updatedItem) => {
-    setEditing(false)
-    setItems(items.map(item => (item.id === id ? updatedItem : item)))
+    fetch(`api/users/${userId}/items`, {
+    method: "PUT",
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Basic ${username}:${password}`,
+      },
+        body: JSON.stringify(id, updatedItem),
+    }).then(() => {
+
+      setEditing(false)
+      setItems(items.map(item => (item.id === id ? updatedItem : item)))
+    })
   }
+
+
 
   // Search
  

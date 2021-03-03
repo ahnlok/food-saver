@@ -61,11 +61,11 @@ app.post("/register", (req, res) => {
   db.User.create({ username, password }).then((user) => {
     res.json({
       message: "Successfully Registered",
-      id:user._id,
-      username:user.username,
-      password:user.password
+      id: user._id,
+      username: user.username,
+      password: user.password,
     });
-  })
+  });
 });
 
 // Log In Route
@@ -83,9 +83,9 @@ app.post("/login", (req, res) => {
     }
     res.json({
       message: "Successfully Logged into the Food Saver",
-      id:user._id,
-      username:user.username,
-      password:user.password
+      id: user._id,
+      username: user.username,
+      password: user.password,
     });
   });
 });
@@ -101,22 +101,22 @@ app.get("/users", (req, res) => {
     });
 });
 
-app.get("/seedItem", (req, res) => {
-  const sampleSeed = [
-    {
-      name: "Milk",
-      category: "Fridge",
-      expiration: "03-02-2021",
-    },
-  ];
+// app.get("/seedItem", (req, res) => {
+//   const sampleSeed = [
+//     {
+//       name: "Milk",
+//       category: "Fridge",
+//       expiration: "03-02-2021",
+//     },
+//   ];
 
-  Items.create({
-    userId: "603d464d2040be37b4049d9d",
-    items: sampleSeed,
-  }).then(() => {
-    res.send("Seed item success!");
-  });
-});
+//   Items.create({
+//     userId: "603d464d2040be37b4049d9d",
+//     items: sampleSeed,
+//   }).then(() => {
+//     res.send("Seed item success!");
+//   });
+// });
 
 // Item Page Route
 app.post("/api/users/:userId/items", async (req, res) => {
@@ -127,7 +127,7 @@ app.post("/api/users/:userId/items", async (req, res) => {
         req.params.userId,
         { $push: { items: newItem._id } },
         { new: true }
-        )
+      )
         .populate("items")
         .then((updatedUser) => {
           console.log(updatedUser);
@@ -153,21 +153,35 @@ app.get("/api/users/:userId/items", async (req, res) => {
       console.log(err);
       res.status(404).end();
     });
-  // const { authorization } = req.headers;
-  // const [, token] = authorization.split(' ');
-  // const [username, password] = token.split(':');
-  // const user = await db.User.findOne({ username }).exec();
-  // if (!user || user.password !==password) {
-  //     res.status(403);
-  //     res.json({
-  //         message: "Invalid Access",
-  //     });
-  //     return;
-  // }
-
-  // const { items } = await Items.findOne({ userId: user._id }).exec();
-  // res.json(items);
 });
+
+// Update
+// app.put("/api/users/:userId/items", async (req, res) => {
+//   db.User.findByIdAndUpdate({ _id: req.params.userId }, req.body, {
+//     new: true,
+//   })
+//     .populate("items")
+//     .then((foundUser2) => res.json(foundUser2))
+//     if (foundUser2) {
+//       console.log(foundUser2.items);
+//       res.json(foundUser2.items);
+//     }
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//     res.status(422).end();
+// });
+
+
+// Delete
+app.delete("/api/users/:userId/items", async (req, res) => {
+  db.User.findById({ _id: req.params.userId })
+  .populate("items")
+  .then((dbModel2) => dbModel2.remove())
+  .then((dbModel2) => res.json(dbModel2))
+  .catch((err) => res.status(422).json(err));
+})
+
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build/index.html"));
