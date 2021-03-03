@@ -8,6 +8,7 @@
     /* background: url('./img/apple.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
+    color: aquamarine;
 }
 .header {
     font-weight: bold;
