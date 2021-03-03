@@ -44,7 +44,7 @@ app.get("/api/config", (req, res) => {
   });
 });
 
-// app.use(routes);
+
 // Register route
 app.post("/register", (req, res) => {
   console.log(req.body);
@@ -62,11 +62,11 @@ app.post("/register", (req, res) => {
   db.User.create({ username, password }).then((user) => {
     res.json({
       message: "Successfully Registered",
-      id:user._id,
-      username:user.username,
-      password:user.password
+      id: user._id,
+      username: user.username,
+      password: user.password,
     });
-  })
+  });
 });
 
 // Log In Route
@@ -84,9 +84,9 @@ app.post("/login", (req, res) => {
     }
     res.json({
       message: "Successfully Logged into the Food Saver",
-      id:user._id,
-      username:user.username,
-      password:user.password
+      id: user._id,
+      username: user.username,
+      password: user.password,
     });
   });
 });
@@ -102,22 +102,6 @@ app.get("/users", (req, res) => {
     });
 });
 
-app.get("/seedItem", (req, res) => {
-  const sampleSeed = [
-    {
-      name: "Milk",
-      category: "Fridge",
-      expiration: "03-02-2021",
-    },
-  ];
-
-  Items.create({
-    userId: "603d464d2040be37b4049d9d",
-    items: sampleSeed,
-  }).then(() => {
-    res.send("Seed item success!");
-  });
-});
 
 // Item Page Route
 app.post("/api/users/:userId/items", async (req, res) => {
@@ -128,7 +112,7 @@ app.post("/api/users/:userId/items", async (req, res) => {
         req.params.userId,
         { $push: { items: newItem._id } },
         { new: true }
-        )
+      )
         .populate("items")
         .then((updatedUser) => {
           console.log(updatedUser);
@@ -140,6 +124,7 @@ app.post("/api/users/:userId/items", async (req, res) => {
       res.status(500).end();
     });
 });
+
 // Items get Route
 app.get("/api/users/:userId/items", async (req, res) => {
   db.User.findById(req.params.userId)
@@ -154,21 +139,14 @@ app.get("/api/users/:userId/items", async (req, res) => {
       console.log(err);
       res.status(404).end();
     });
-  // const { authorization } = req.headers;
-  // const [, token] = authorization.split(' ');
-  // const [username, password] = token.split(':');
-  // const user = await db.User.findOne({ username }).exec();
-  // if (!user || user.password !==password) {
-  //     res.status(403);
-  //     res.json({
-  //         message: "Invalid Access",
-  //     });
-  //     return;
-  // }
-
-  // const { items } = await Items.findOne({ userId: user._id }).exec();
-  // res.json(items);
 });
+
+app.put("/api/foods/:id", (req, res) => {
+  console.log(req.body);
+  db.Item.findByIdAndUpdate({ _id: req.params.id }, req.body)
+  .then((dbModel) => res.json(dbModel))
+  .catch((err) => res.status(422).json(err));
+})
 
 // DELETE food item
 app.delete("/api/foods/:id", (req, res) => {
@@ -178,6 +156,8 @@ app.delete("/api/foods/:id", (req, res) => {
             .catch((err) => res.status(422).json(err));
 }),
 
+<<<<<<< HEAD
+=======
 //EDIT food item
 app.put("/api/foods/:id", (req, res) => {
   console.log(req.body);
@@ -186,6 +166,7 @@ app.put("/api/foods/:id", (req, res) => {
             .catch((err) => res.status(422).json(err));
 }),
 
+>>>>>>> 5f4edd04f019cc51ae2925006ef6caa85fb61453
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build/index.html"));

@@ -13,7 +13,7 @@ export default function Welcome () {
     return (
         <div>
             {id && <button onClick={logout}>Logout</button>}
-            <h1>Welcome {id && username}</h1>
+            <h1>Welcome {id && username} to The Food Saver</h1>
             {!id && <Link to="/register">Register</Link>}
             <br />
             {!id && <Link to="/login">Login</Link>}
