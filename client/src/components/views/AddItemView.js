@@ -105,7 +105,7 @@ class AddItemView extends React.Component {
                       <div className="w-col w-col-6">
                         <div className="af-class-div-block-2" />
                         <div className="af-class-footer-column">
-                          <a href="/Indexview" className="af-class-footer-link">Home</a>
+                          <a href="/IndexView" className="af-class-footer-link">Home</a>
                           <a href="/Login" className="af-class-footer-link">Login in</a>
                           <a href="/AddItem" className="af-class-footer-link">AddItem</a>
                           <a href="/Signup" className="af-class-footer-link">Sign up</a>

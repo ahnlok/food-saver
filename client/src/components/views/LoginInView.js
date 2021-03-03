@@ -81,8 +81,9 @@ class LoginInView extends React.Component {
                   <nav role="navigation" className="af-class-nav-menu w-nav-menu">
                     <a href="/IndexView" className="af-class-nav-link w-nav-link">Home</a>
                     <a href="/login" target="_blank" aria-current="page" className="af-class-nav-link w-button w--current">Login in</a>
-                   
+                    <a href="/Singup" target="_blank" aria-current="page" className="af-class-nav-link w-button w--current">Sign up</a>
                     <a href="/AddItem" className="af-class-nav-link w-nav-link">Add Item</a>
+                   
                   </nav>
                 </div>
               </div>
@@ -100,6 +101,8 @@ class LoginInView extends React.Component {
                           <div className="af-class-footer-column">
                             <a href="/IndexView" className="af-class-footer-link">Home</a>
                             <a href="/Login" className="af-class-footer-link">Login in</a>
+                            <a href="/Signup" className="af-class-footer-link">Sign up</a>
+                            <a href="/AddItem" className="af-class-footer-link">Add item</a>
                           </div>
                         </div>
                         <div className="af-class-footer-column2 w-col w-col-6">
