@@ -156,6 +156,17 @@ app.delete("/api/foods/:id", (req, res) => {
             .catch((err) => res.status(422).json(err));
 }),
 
+<<<<<<< HEAD
+=======
+//EDIT food item
+app.put("/api/foods/:id", (req, res) => {
+  console.log(req.body);
+  db.Item.findByIdAndUpdate({ _id: req.params.id }, req.body)
+            .then((dbModel) => res.json(dbModel))
+            .catch((err) => res.status(422).json(err));
+}),
+
+>>>>>>> 5f4edd04f019cc51ae2925006ef6caa85fb61453
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build/index.html"));
