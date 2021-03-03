@@ -1,3 +1,4 @@
+const path = require("path");
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
@@ -139,6 +140,7 @@ app.post("/api/users/:userId/items", async (req, res) => {
       res.status(500).end();
     });
 });
+
 // Items get Route
 app.get("/api/users/:userId/items", async (req, res) => {
   db.User.findById(req.params.userId)
@@ -155,37 +157,20 @@ app.get("/api/users/:userId/items", async (req, res) => {
     });
 });
 
-// Update
-// app.put("/api/users/:userId/items", async (req, res) => {
-//   db.User.findByIdAndUpdate({ _id: req.params.userId }, req.body, {
-//     new: true,
-//   })
-//     .populate("items")
-//     .then((foundUser2) => res.json(foundUser2))
-//     if (foundUser2) {
-//       console.log(foundUser2.items);
-//       res.json(foundUser2.items);
-//     }
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//     res.status(422).end();
-// });
 
-
-// Delete
-app.delete("/api/users/:userId/items", async (req, res) => {
-  db.User.findById({ _id: req.params.userId })
-  .populate("items")
-  .then((dbModel2) => dbModel2.remove())
-  .then((dbModel2) => res.json(dbModel2))
-  .catch((err) => res.status(422).json(err));
-})
+// DELETE food item
+app.delete("/api/foods/:id", (req, res) => {
+  db.Item.findById({ _id: req.params.id })
+            .then((dbModel) => dbModel.remove())
+            .then((dbModel) => res.json(dbModel))
+            .catch((err) => res.status(422).json(err));
+}),
 
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build/index.html"));
 });
+
 
 // Listener
 app.listen(PORT, () => {
