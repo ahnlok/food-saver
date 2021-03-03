@@ -142,13 +142,13 @@ class IndexView extends React.Component {
                     <div className="w-col w-col-6">
                       <div className="af-class-div-block-2" />
                       <div className="af-class-footer-column">
-                        <a href="index.html" aria-current="page" className="af-class-footer-link w--current">Home</a>
-                        <a href="#" className="af-class-footer-link">Login in</a>
+                        <a href="IndexView" aria-current="page" className="af-class-footer-link w--current">Home</a>
+                        <a href="LoginInView" className="af-class-footer-link">Login in</a>
                       </div>
                     </div>
                     <div className="af-class-footer-column2 w-col w-col-6">
               
-                      <a href="mailto:hello@website.com?subject=Hi" className="af-class-footer-link">Contact</a>
+                      <a href="mya.todd428376@gmail.comsubject=Contact" className="af-class-footer-link">Contact</a>
                     </div>
                   </div>
                 </div>
