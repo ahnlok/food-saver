@@ -8,10 +8,11 @@
     /* background: url('./img/apple.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 .header {
     font-weight: bold;
-    color: red;
+    color: #212e53;
     font-family: 'Francois One';
     font-size: 100px;
     size: 100px;
@@ -26,8 +27,8 @@
     font-size: 35px;
 }
 #register_button {
-   font-size: 30px;
-   margin-right: 20px;
+    font-size: 30px;
+    margin-right: 20px;
 }
 .register_link {
     color: white;

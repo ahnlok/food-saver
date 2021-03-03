@@ -56,7 +56,6 @@ export default function Register() {
             <h1 className="register_header center">Register</h1>
             {error && <span style={{ color: 'red' }}>{error}</span>}
             <form onSubmit={register} className="center">
-
                 <input
                 className="af-view"
                     onChange={(e) => setUsername(e.target.value)}

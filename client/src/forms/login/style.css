@@ -1,3 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap');
+
+/* Francois One */
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&family=M+PLUS+1p&display=swap');
+
+
+.background {
+    /* background: url('./img/apple.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aquamarine;
+}
+.header {
+    font-weight: bold;
+    color: red;
+    font-family: 'Francois One';
+    font-size: 100px;
+    size: 100px;
+}
+
+.date {
+    font-family: bold;
+    font-size: 50px;
+}
+.time {
+    font-family: bold;
+    font-size: 35px;
+}
+
+
+
+
+
 body {
     background-color: aquamarine;
 
