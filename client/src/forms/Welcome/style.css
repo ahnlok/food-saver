@@ -1,0 +1,45 @@
+/* M PLUS 1p */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap');
+
+/* Francois One */
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&family=M+PLUS+1p&display=swap');
+
+.background {
+    /* background: url('./img/apple.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header {
+    font-weight: bold;
+    color: red;
+    font-family: 'Francois One';
+    font-size: 100px;
+    size: 100px;
+}
+
+.date {
+    font-family: bold;
+    font-size: 50px;
+}
+.time {
+    font-family: bold;
+    font-size: 35px;
+}
+#register_button {
+   font-size: 30px;
+   margin-right: 20px;
+}
+.register_link {
+    color: white;
+    font-family: 'M PLUS 1p';
+    font-weight: bold;
+}
+
+#login_button {
+    font-size: 30px;
+}
+.login_link {
+    color: white;
+    font-family: 'M PLUS 1p';
+    font-weight: bold;
+}
