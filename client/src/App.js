@@ -38,18 +38,18 @@ const App = () => {
               <IndexView />
             </Route>
             <Route exact path="/register">
-              <Signup2 />
+              <IndexView />
             </Route>
-            <Route exact path="/LoginInView">
+            <Route exact path="/Login">
               <LoginInView />
             </Route>
-            <Route exact path="/AddItemView">
+            <Route exact path="/AddItem">
               <AddItemView />
             </Route>
-            <Route exact path="/NotFoundView">
+            <Route exact path="/NotFound">
               <NotFoundView />
             </Route>
-            <Route exact path="/UnauthorizedView">
+            <Route exact path="/Unauthorized">
               <UnauthorizedView />
             </Route>
             <Route exact path="/helpers">

@@ -82,9 +82,9 @@ class IndexView extends React.Component {
                   </div>
                   <nav role="navigation" className="af-class-nav-menu w-nav-menu">
                     <a href="/IndexView" aria-current="page" className="af-class-nav-link w-nav-link w--current">Home</a>
-                    <a href="/register" target="_blank" className="af-class-nav-link w-button">Login in</a>
+                    <a href="/Login" target="_blank" className="af-class-nav-link w-button">Login in</a>
                     
-                    <a href="/register" target="_blank" className="af-class-nav-link w-button">Login in</a>
+                    <a href="/AddItem" target="_blank" className="af-class-nav-link w-button">AddItem</a>
                     
                    
                   </nav>
@@ -96,7 +96,7 @@ class IndexView extends React.Component {
                 <div className="af-class-hero-content">
                   <h1 style={{WebkitTransform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', MozTransform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', msTransform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', transform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', opacity: 0}} className="af-class-hero-h1">TEST.</h1>
                   <p style={{WebkitTransform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', MozTransform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', msTransform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', transform: 'translate3d(-25PX, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)', opacity: 0}} className="af-class-hero-paragraph">Test</p>
-                  <a href="./" className="af-class-button w-button">Create a Item</a>
+                  <a href="./ SignupView" className="af-class-button w-button">Create a Item</a>
                 </div>
                 <div className="af-class-hero-image-wrap" />
               </div>
