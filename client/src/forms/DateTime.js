@@ -14,8 +14,8 @@ export const DateTime = () => {
 
     return(
         <div>
-            <p> Date : {date.toLocaleDateString()}</p>
-            <p> Time : {date.toLocaleTimeString()}</p>
+            <p className="date center"> Date : {date.toLocaleDateString()}</p>
+            <p className="time center"> Time : {date.toLocaleTimeString()}</p>
 
         </div>
     )
