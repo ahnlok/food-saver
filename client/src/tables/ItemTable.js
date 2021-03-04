@@ -18,7 +18,7 @@ const ItemTable = (props) => (
             <td>{item.category}</td>
             <td>{item.expiration}</td>
             <td>
-              <button className="button muted-button">Use</button>
+              {/* <button className="button muted-button">Use</button> */}
               {/* Edit Button */}
               <button 
                 onClick={() => {

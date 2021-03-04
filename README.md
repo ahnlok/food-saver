@@ -39,7 +39,7 @@ Have you ever gone to your refrigerator and found food that you had forgotten ab
 💻 npm start
 
 ## Contributing
-👪 Sungpil An, Adrian Ash, Mugi Chulemsuren, Mario Reid, Mya Todd
+👪 Sungpil An, Adrian Ash, Mario Reid
 ## Tests
 ✏️ No testing at this time.
 ## Questions
@@ -47,9 +47,8 @@ Have you ever gone to your refrigerator and found food that you had forgotten ab
 <br />
 [Sungpil An](https://github.com/ahnlok)<br />
 [Adrian Ash](https://github.com/ashadria1)<br />
-[Mugi Chulemsuren](https://github.com/mugich)<br />
 [Mario Reid](https://github.com/marioreid)<br />
-[Mya Todd](https://github.com/mt428376)<br />
+
 
 <br />
 ✉️ E-mail us with any questions: <br /><br />
@@ -60,14 +59,11 @@ E-mail:  ansungpil1@gmail.com
 Adrian Ash
 E-mail:  ashadria@gmail.com
 
-Mugi Chulemsuren
-E-mail:  munkhuu1233@gmail.com
 
 Mario Reid
 E-mail:  mario.reid83@gmail.com
 
-Mya Todd
-E-mail:  mya.todd428376@gmail.com
+
 
 ## Links
 
