@@ -1,0 +1,60 @@
+/* Alfa Slab One */
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&family=M+PLUS+1p&display=swap');
+
+/* Archivo Black */
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&family=M+PLUS+1p&display=swap');
+
+.card {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid lightblue 4px;
+    width: 50%;
+    text-align: center;
+}
+
+.name, .password{
+    font-size: 30px;
+    font-family: 'Alfa Slab One';
+    font-weight: bold;
+    color:#4682B4; 
+}
+.header {
+    font-size: 80px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    color:#4682B4;
+    font-family: 'Alfa Slab One';
+}
+
+.register_link {
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
+    font-family: 'Archivo Black'
+}
+
+#login_button {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#login_button:hoover {
+    background: white;
+}
+
+@media screen and (max-width: 900) {
+    .header {
+        margin-top: 10px;
+        text-align: center;
+        font-weight: bold;
+        color:#4682B4;
+        font-family: 'Alfa Slab One';
+    }
+}

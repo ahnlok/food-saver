@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import CredentialsContext from '../util/Test';
+import { Link } from 'react-router-dom';
+import './StyleFolder/Login.css';
 
 export const handleErrors = async (response) => {
     if (!response.ok) {
@@ -45,22 +47,37 @@ export default function Login() {
     const history = useHistory();
 
     return (
-        <div>
-            <h1>Login</h1>
+        <div className='card'>
+            <h1 className="header">Login</h1>
+            <hr />
             {error && <span style={{ color: 'red' }}>{error}</span>}
             <form onSubmit={login}>
-                <input
-                    onChange={(e) => setUsername(e.target.value)}
-                    placeholder="username"
-                />
+                <div className="row">
+                    <div className="input-field col s12">
+                        <strong className="name">Name: 
+                            <input
+                            onChange={(e) => setUsername(e.target.value)}
+                        />  
+                        </strong>
+                    </div>
+                </div>
                 <br />
-                <input
-                    type="password"
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="password"
-                />
+                <div className="row">
+                    <div className="input-field col s12">
+                        <strong className="password">Password:
+                            <input
+                                type="password"
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                        </strong>
+                    </div>
+                </div>
+                <strong><Link 
+               to="/register"
+               className="register_link">
+               Don't Have An Account? Click Here</Link></strong>
                 <br />
-                <button type="submit">Login</button>
+                <button className="button is-info" id="login_button" type="submit">Login</button>
             </form>
         </div>
     );

@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react' ;
 
-import Welcome from  './forms/Welcome/Welcome';
+import Welcome from  './forms/Welcome';
 import Login from './forms/Login';
-import Register from './forms/Register/Register';
+import Register from './forms/Register';
 import Items from './components/Items';
 import CredentialsContext from './util/Test';
 
