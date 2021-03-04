@@ -1,9 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import {DatePicker} from "@material-ui/pickers"
+
 // import ItemForm from '../components/ItemForm/ItemForm';
 
 const AddItemForm = (props) => {
     const initialFormState = { id: null, name: '', category: '', expiration: ''}
     const [item, setItem] = useState(initialFormState);
+
+
+const handleDateChange = (event) => {
+    setItem({ ...item, expiration: event })
+    
+}
 
     const handleInputChange = (event) => {
         const { name, value } = event.target 
@@ -35,12 +43,14 @@ const AddItemForm = (props) => {
                 onChange={handleInputChange}
             />
             <label>Expiration Date</label>
-            <input
+        {/*     <input
                 type="text"
                 name="expiration"
+                className="datepicker"
                 value={item.expiration}
                 onChange={handleInputChange}
-            />
+            /> */}
+            <DatePicker value={item.expiration ? item.expiration : new Date()} onChange={handleDateChange} />
             <button>Add New Item</button>
         </form>
     )

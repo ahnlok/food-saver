@@ -7,9 +7,10 @@ import Register from './forms/Register';
 import Items from './components/Items';
 import CredentialsContext from './util/Test';
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-
+import {MuiPickersUtilsProvider} from "@material-ui/pickers";
+import DateFnsUtils from '@date-io/date-fns';
 
 const App = () => {
   const credentialsState = useState(null);
@@ -23,6 +24,7 @@ const App = () => {
   }
   return (
     <div className="App">
+      <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <CredentialsContext.Provider value={{id, username, password, setCredential}}>
         <Router>
           <Switch>
@@ -40,6 +42,7 @@ const App = () => {
           </Switch>
         </Router>
       </CredentialsContext.Provider>
+      </MuiPickersUtilsProvider>
     </div>
   )
 }

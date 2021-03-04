@@ -53,20 +53,21 @@ app.post("/register", (req, res) => {
     if (user) {
       console.log(user);
       // res.status(500);
-      res.json({
+      return res.json({
         message: "user already exists",
       });
-      return;
     }
+      db.User.create({ username, password }).then((user) => {
+        res.json({
+          message: "Successfully Registered",
+          id: user._id,
+          username: user.username,
+          password: user.password,
+        });
+      });
+    
   });
-  db.User.create({ username, password }).then((user) => {
-    res.json({
-      message: "Successfully Registered",
-      id: user._id,
-      username: user.username,
-      password: user.password,
-    });
-  });
+
 });
 
 // Log In Route
