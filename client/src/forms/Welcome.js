@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import Items from '../../components/Items';
-import style from './style.css'
-import DateTime from '../DateTime'
+import Items from '../components/Items';
+import './StyleFolder/Welcome.css'
+import DateTime from './DateTime'
 
-import CredentialsContext from '../../util/Test';
+import CredentialsContext from '../util/Test';
 
 export default function Welcome () {
     const {id, username, password, setCredential} = useContext(CredentialsContext);
@@ -15,7 +15,7 @@ export default function Welcome () {
     return (
         <div className="background">
             {id && <button onClick={logout}>Logout</button>}
-            <h1 className="header center">Welcome {id && username} to The Food Saver</h1>
+            <h1 className="header center">Welcome <strong>{id && username}</strong> to The Food Saver</h1>
             <DateTime className="date"></DateTime>
             {/* <hr /> */}
             <br />
