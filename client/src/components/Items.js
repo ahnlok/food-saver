@@ -119,8 +119,8 @@ const getItems = () => {
 
   return (
     <div className="container">
-      <h1 className="center">The Food Saver</h1>
-      <DateTime></DateTime>
+      <h1 className="center">Add, view, edit, or delete your food items!</h1>
+      
       <div className="flex-row">
         <div className="flex-large">
           {editing ? (
