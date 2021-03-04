@@ -13,8 +13,8 @@ const itemsSchema = new mongoose.Schema({
     trim: true,
   },
   expiration: {
-    type: String,
-    trim: true
+    type: Date,
+    
   }
 })
 
